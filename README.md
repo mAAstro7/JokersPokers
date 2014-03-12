@@ -8,4 +8,4 @@ Käyttäjät: Pelaaja
 
 Toiminnot: Pelata jokeripokeria
 
-E: Pikkumuokkaus klooniprojektin testauksen takia
+E: 2
