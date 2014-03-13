@@ -8,6 +8,6 @@ Pelin kulku: Pelaajalle jaetaan viisi korttia joista on mahdollista vaihtaa osa.
 
 Laajennukset:
 
-Mahdollisesti tuplausmahdollisuus
+Mahdollisesti tuplausmahdollisuus!!!
 
 
