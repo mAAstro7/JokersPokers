@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package jokerpokers.git.jokerspokers.Kortti;
+package JokersPokers.Korttii;
 
 import java.util.*;
 
@@ -19,6 +19,10 @@ public class Korttipakka {
         korttipakka = new ArrayList<Kortti>();
         maat = new ArrayList<String>();
 
+    }
+    
+    public int getKorttienlkmPakassa() {       
+        return korttipakka.size();
     }
 
     public void poistaKortti(Kortti poistettava) {
