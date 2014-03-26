@@ -18,3 +18,9 @@ Käytetty aika: 5h
 Torstai 20.3 5h
 
 Koodaus aloitettu ja ensimmäiset testit tehty.
+
+Viikko: 3
+
+Käytetty aika: 1h
+
+Keskiviikko 26.3 1h
