@@ -4,8 +4,8 @@
  */
 package JokersPokers.Testit;
 
-import JokersPokers.Korttii.Kortti;
-import JokersPokers.Korttii.Korttipakka;
+import JokersPokers.Kortti.Kortti;
+import JokersPokers.Kortti.Korttipakka;
 import JokersPokers.Pelaaja.Pokerikasi;
 import org.junit.Test;
 import static org.junit.Assert.*;

@@ -1,7 +1,7 @@
 package JokersPokers.Pelaaja;
 
-import JokersPokers.Korttii.Kortti;
-import JokersPokers.Korttii.Korttipakka;
+import JokersPokers.Kortti.Kortti;
+import JokersPokers.Kortti.Korttipakka;
 import java.util.*;
 
 public class Pokerikasi {
