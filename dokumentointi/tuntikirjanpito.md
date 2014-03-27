@@ -21,6 +21,7 @@ Koodaus aloitettu ja ensimmäiset testit tehty.
 
 Viikko: 3
 
-Käytetty aika: 1h
+Käytetty aika: 3h
 
-Keskiviikko 26.3 1h
+Keskiviikko 26.3 2h
+Torstai 27.3 1h
