@@ -36,12 +36,14 @@ public class Pokerikasi {
         pokerikasi.remove(kortti);
     }
     
-    public void vaihdaKortti(Korttipakka pakka, Kortti kortti) {
+        public void poistaKorttiIndex(int i) {
+        pokerikasi.remove(i);
+    }
     
+    public void vaihdaKortti(Korttipakka pakka, Kortti kortti) {
+   
             poistaKortti(kortti); 
-            pokerikasi.add(pakka.arvoKortti());
-
-        
+            pokerikasi.add(pakka.arvoKortti());      
     }
     
     public Kortti getViimeinenKortti() {

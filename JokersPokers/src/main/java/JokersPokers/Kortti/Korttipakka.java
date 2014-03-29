@@ -53,5 +53,7 @@ public class Korttipakka {
                 korttipakka.add(kortti);
             }
         }
+        Kortti kortti = new Kortti("Jokeri", 0);
+        korttipakka.add(kortti);
     }
 }

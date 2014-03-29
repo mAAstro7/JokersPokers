@@ -37,7 +37,11 @@ public class PokeriKasiTest {
         this.pokerikasi.poistaKortti(kortti);
         assertEquals(4, pokerikasi.getKorttienlkmKadessa());
     }
-
+        @Test
+    public void poistuukoKorttiIndeksinavulla() {
+        this.pokerikasi.poistaKorttiIndex(2);
+        assertEquals(4, pokerikasi.getKorttienlkmKadessa());
+    }
     @Test
     public void testaaVaihtuukoKortti() {
         String vanhapakka = pokerikasi.toString();

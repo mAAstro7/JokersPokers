@@ -24,19 +24,19 @@ public class KorttipakkaTest {
     
   @Test
     public void onkoPakkaLuotuOikein() {
-        assertEquals(52, pakka.getKorttienlkmPakassa());
+        assertEquals(53, pakka.getKorttienlkmPakassa());
     }
   @Test
   public void poistuukoKortti() {
       Kortti kortti;
       kortti = pakka.arvoKortti();
       pakka.poistaKortti(kortti);
-      assertEquals(51, pakka.getKorttienlkmPakassa());
+      assertEquals(52, pakka.getKorttienlkmPakassa());
     }
   @Test
   public void poistuukoKortitkunluodaanKasi() {
       Pokerikasi kasi = new Pokerikasi();
       kasi.luoPokeriKasi(pakka);
-      assertEquals(47, pakka.getKorttienlkmPakassa());
+      assertEquals(48, pakka.getKorttienlkmPakassa());
   }
 }

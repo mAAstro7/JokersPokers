@@ -25,3 +25,9 @@ Käytetty aika: 3h
 
 Keskiviikko 26.3 2h
 Torstai 27.3 1h
+
+Viikko: 4
+
+Kätettu aika: 1h
+
+Lauantai 29.3 1h
