@@ -13,6 +13,7 @@ public class Pokerikasi {
         pokerikasi = new ArrayList<Kortti>();
     }
     public Pokerikasi(Kortti kortti1,Kortti kortti2,Kortti kortti3,Kortti kortti4,Kortti kortti5) {
+        pokerikasi = new ArrayList<Kortti>();
         pokerikasi.add(kortti1);
         pokerikasi.add(kortti2);
         pokerikasi.add(kortti3);
@@ -28,9 +29,14 @@ public class Pokerikasi {
 
     }
     
-    public String getKortti (int indeksi) {
-        return pokerikasi.get(indeksi).toString();
+    public Kortti getKortti (int indeksi) {
+        return pokerikasi.get(indeksi);
     }
+    
+    public int getKorttiArvo (int indeksi) {
+        return pokerikasi.get(indeksi).getArvo();
+    }
+
 
     public void poistaKortti(Kortti kortti) {
         pokerikasi.remove(kortti);

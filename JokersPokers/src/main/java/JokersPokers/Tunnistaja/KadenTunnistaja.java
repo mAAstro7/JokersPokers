@@ -2,18 +2,48 @@
 package JokersPokers.Tunnistaja;
 
 import JokersPokers.Pelaaja.Pokerikasi;
+import JokersPokers.Pokerikadet.ValmiitPokerikadet;
+import JokersPokers.Pokerikadet.ValmisPokerikasi;
+import java.util.*;
 
 
 
 public class KadenTunnistaja {
     
-    private Pokerikasi pokerikasi;
+    private ValmiitPokerikadet valmiitkadet;
     
-    
-    KadenTunnistaja(Pokerikasi pokerikasi) {
-        this.pokerikasi = pokerikasi;
+  
+    public KadenTunnistaja() {
+      
     }
     
+   
+    public void setValmiitPokerikadet(ValmiitPokerikadet kasi) {
+        this.valmiitkadet = kasi;
+    }
+    
+ 
+
+    public ValmisPokerikasi palautaKasi(Pokerikasi kasi) {
+        
+        return null;     
+    }
+    
+    public boolean onkoHai (Pokerikasi kasi) {
+       
+        List<Integer> lista = new ArrayList<Integer>();
+        for (int i = 0; i < 5; i++) {
+     
+            lista.add(kasi.getKortti(i).getArvo());
+        } 
+        if (lista.size() == 5) {
+            return true;
+        } else {
+            return false;
+        }
+        
+        
+    }
    
     
 }
