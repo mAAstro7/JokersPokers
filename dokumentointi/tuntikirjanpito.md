@@ -28,6 +28,7 @@ Torstai 27.3 1h
 
 Viikko: 4
 
-Käytetty aika: 1h
+Käytetty aika: 2h
 
 Lauantai 29.3 1h
+Maanantai 31.3 1h
