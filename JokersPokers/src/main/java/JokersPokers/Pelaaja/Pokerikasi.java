@@ -83,13 +83,25 @@ public class Pokerikasi {
      * @return pakka  Korttipakka josta on poistettu pelaajalle arvottu kortti
      * 
      */
-    public Korttipakka vaihdaKortti(Korttipakka pakka, Kortti kortti) {
+    public void vaihdaKortti(Korttipakka pakka, Kortti kortti) {
 
         poistaKortti(kortti);
+        pakka.poistaKortti(kortti);
         Kortti arvottu = pakka.arvoKortti();
-        pokerikasi.add(arvottu);
+        lisaaKortti(arvottu);
         pakka.poistaKortti(arvottu);
-        return pakka;
+    }
+    
+    /**
+     * Metodi vaihtaa lisäää käteen kortin jos käsi ei ole täysi (= sisältää jo 5 korttia)
+     
+     * @param kortti Lisättävä kortti
+     */
+    public void lisaaKortti (Kortti kortti) {
+        if (pokerikasi.size()<5) {
+             pokerikasi.add(kortti);
+        }
+       
     }
 
     public Kortti getViimeinenKortti() {
