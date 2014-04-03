@@ -1,13 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Luokka korttej varten. Jokainen kortti tietää arvonsa sekä maansa
+ * 
  */
 package JokersPokers.Kortti;
 
-/**
- *
- * @author Jomppa
- */
+
 public class Kortti extends Korttipakka {
 
     private int arvo;

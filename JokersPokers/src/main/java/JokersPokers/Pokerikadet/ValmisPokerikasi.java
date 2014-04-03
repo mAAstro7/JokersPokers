@@ -1,14 +1,14 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Luokka hoitaa valmiin pokerikäden, siihen sisältyy arvojärjesty joka on 
+ * jokin luku jonka annan että käsiä voidaan vertailla (yleensä kerroin)
+ * Kerroin määrää voitto kertoimen kyseiselle kädelle 
+ * (ei voida käyddää vertailussa koska hai ja pari molemmat 0 kertoimisia)
+ * Kasi on käsi itse kirjoitettuna
  */
 package JokersPokers.Pokerikadet;
 import JokersPokers.Pelaaja.Pokerikasi;
 
-/**
- *
- * @author Jomppa
- */
+
 public class ValmisPokerikasi implements Comparable<ValmisPokerikasi> {
     private int arvojarjestys;
     private String kasi;
@@ -49,6 +49,9 @@ public class ValmisPokerikasi implements Comparable<ValmisPokerikasi> {
         return "Käsi: "+this.kasi + " Kerroin: " + this.kerroin;
     }
 
+/**
+ * Käsiä voidaan vertailla arvojärjestyksen avulla
+ */
     @Override
     public int compareTo(ValmisPokerikasi o) {
         if (this.arvojarjestys>o.getArvojarjestys()) {

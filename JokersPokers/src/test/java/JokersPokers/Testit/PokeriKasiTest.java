@@ -46,7 +46,7 @@ public class PokeriKasiTest {
     public void testaaVaihtuukoKortti() {
         String vanhapakka = pokerikasi.toString();
         Kortti kortti = pokerikasi.getViimeinenKortti();
-        this.pokerikasi.vaihdaKortti(pakka, kortti);
+        this.pakka = this.pokerikasi.vaihdaKortti(pakka, kortti);
         assertFalse("samat on", pokerikasi.toString().equals(vanhapakka));
     }
     

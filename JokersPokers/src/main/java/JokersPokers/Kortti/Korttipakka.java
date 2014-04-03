@@ -1,15 +1,12 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Luokka korttipakkaa varten. Pakka tietää jokaisen kortin
+ * 
  */
 package JokersPokers.Kortti;
 
 import java.util.*;
 
-/**
- *
- * @author Jomppa
- */
+
 public class Korttipakka {
 
     private ArrayList<String> maat;
@@ -20,15 +17,26 @@ public class Korttipakka {
         maat = new ArrayList<String>();
 
     }
-    
+/**
+ * Palauttaa korttien lukumäärän eli 53 (13+13+13+13+1)
+ */
     public int getKorttienlkmPakassa() {       
         return korttipakka.size();
     }
-
+/**
+ * Poistaa pakasta tietyn kortin
+ 
+  * @param poistettava Käyttäjän valitsema poistettava kortti
+ 
+ */
     public void poistaKortti(Kortti poistettava) {
         korttipakka.remove(poistettava);
     }
 
+/**
+ * Arpoo pakasta kortin, tätä käytetään 
+ * esimerkiksi mahdollisen tuplauksen kanssa sekä arpoessa pelaajalle kortteja
+ */
     public Kortti arvoKortti() {
         Random random = new Random();
         int arpa = random.nextInt(korttipakka.size());
@@ -42,6 +50,9 @@ public class Korttipakka {
         return korttipakka.toString();
     }
 
+/**
+ *  Luodaan korttipakka for-looppien avulla
+ */
     public void luoKorttipakka() {
         maat.add("pata");
         maat.add("hertta");

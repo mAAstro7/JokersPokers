@@ -1,3 +1,6 @@
+/**
+ * Luokka pokerikädelle
+ */
 package JokersPokers.Pelaaja;
 
 import JokersPokers.Kortti.Kortti;
@@ -12,7 +15,8 @@ public class Pokerikasi {
     public Pokerikasi() {
         pokerikasi = new ArrayList<Kortti>();
     }
-    public Pokerikasi(Kortti kortti1,Kortti kortti2,Kortti kortti3,Kortti kortti4,Kortti kortti5) {
+
+    public Pokerikasi(Kortti kortti1, Kortti kortti2, Kortti kortti3, Kortti kortti4, Kortti kortti5) {
         pokerikasi = new ArrayList<Kortti>();
         pokerikasi.add(kortti1);
         pokerikasi.add(kortti2);
@@ -21,6 +25,12 @@ public class Pokerikasi {
         pokerikasi.add(kortti5);
     }
 
+/**
+     * Metodi luo pokerikäden
+     
+     * @param pakka Valmiiksi luotu korttipakka
+     
+     */
     public void luoPokeriKasi(Korttipakka pakka) {
 
         for (int i = pokerikasi.size(); i < 5; i++) {
@@ -28,34 +38,64 @@ public class Pokerikasi {
         }
 
     }
-    
-    public Kortti getKortti (int indeksi) {
+
+    public Kortti getKortti(int indeksi) {
         return pokerikasi.get(indeksi);
     }
-    
-    public int getKorttiArvo (int indeksi) {
+
+/**
+     * Metodi hakee halutun kortin arvon
+     
+     * @param indeksi Kortin indeksi
+     * @return pokerikasi.get(indeksi).getArvo(); Palauttaa kortin arvon (2-14)
+     
+     */
+    public int getKorttiArvo(int indeksi) {
         return pokerikasi.get(indeksi).getArvo();
     }
 
-
+/**
+     * Metodi poistaa tietyn kortin
+     
+     * @param kortti Poistettava kortti
+     
+     */
     public void poistaKortti(Kortti kortti) {
         pokerikasi.remove(kortti);
     }
-    
-        public void poistaKorttiIndex(int i) {
-        pokerikasi.remove(i);
+
+/**
+     * Metodi poistaa tietyn kortin indeksin avulla
+     
+     * @param indeksi Poistettavan kortin indeksi
+     
+     */
+    public void poistaKorttiIndex(int indeksi) {
+        pokerikasi.remove(indeksi);
     }
-    
-    public void vaihdaKortti(Korttipakka pakka, Kortti kortti) {
-   
-            poistaKortti(kortti); 
-            pokerikasi.add(pakka.arvoKortti());      
+
+/**
+     * Metodi vaihtaa kortin
+     
+     * @param pakka  Korttipakka josta kortti arvotaan
+     * @param kortti  poistettava kortti
+     * 
+     * @return pakka  Korttipakka josta on poistettu pelaajalle arvottu kortti
+     * 
+     */
+    public Korttipakka vaihdaKortti(Korttipakka pakka, Kortti kortti) {
+
+        poistaKortti(kortti);
+        Kortti arvottu = pakka.arvoKortti();
+        pokerikasi.add(arvottu);
+        pakka.poistaKortti(arvottu);
+        return pakka;
     }
-    
+
     public Kortti getViimeinenKortti() {
         return pokerikasi.get(4);
     }
-    
+
     public String toString() {
         return pokerikasi.toString();
     }
@@ -63,6 +103,4 @@ public class Pokerikasi {
     public int getKorttienlkmKadessa() {
         return pokerikasi.size();
     }
-    
-
 }

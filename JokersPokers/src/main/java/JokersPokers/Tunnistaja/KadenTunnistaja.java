@@ -1,4 +1,6 @@
-
+/**
+ * Luokka käsien tunnistamista varten
+ */
 package JokersPokers.Tunnistaja;
 
 import JokersPokers.Pelaaja.Pokerikasi;
@@ -29,6 +31,11 @@ public class KadenTunnistaja {
         return null;     
     }
     
+/**
+ * Metodi tarkistaa onko annettu pokerikäsi hai
+ * 
+ * @return false/true  Palauttaa tiedon onko käsi hai
+ */
     public boolean onkoHai (Pokerikasi kasi) {
        
         List<Integer> lista = new ArrayList<Integer>();
