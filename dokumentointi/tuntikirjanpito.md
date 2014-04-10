@@ -52,5 +52,14 @@ Maanantai 31.3 1h
 
 Torstai 3.4 2h
 
-
 Lisätiedot: Javadoc luotu sekä sekvenssikaavioita. Myös koodi on edistynyt hyvin. README myös päivitetty
+
+
+Viikko: 5
+
+
+Käytetty aika: 1h
+
+Torstai 10.4 1h
+
+Lisätiedot: Koodia tehty vähän lisää, dokumentointia tullaan myös päivittämään
