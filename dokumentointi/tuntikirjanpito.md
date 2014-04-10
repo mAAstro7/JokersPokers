@@ -58,8 +58,8 @@ Lisätiedot: Javadoc luotu sekä sekvenssikaavioita. Myös koodi on edistynyt hy
 Viikko: 5
 
 
-Käytetty aika: 1h
+Käytetty aika: 4h
 
 Torstai 10.4 1h
 
-Lisätiedot: Koodia tehty vähän lisää, dokumentointia tullaan myös päivittämään
+Lisätiedot: Koodia tehty lisää ja uudet metodit testattu, sekä hieman vanhoja testjeä paranneltu. Luokkakaavio päivitetty ajantasalle
