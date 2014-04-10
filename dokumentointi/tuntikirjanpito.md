@@ -60,6 +60,6 @@ Viikko: 5
 
 Käytetty aika: 4h
 
-Torstai 10.4 1h
+Torstai 10.4 4h
 
 Lisätiedot: Koodia tehty lisää ja uudet metodit testattu, sekä hieman vanhoja testjeä paranneltu. Luokkakaavio päivitetty ajantasalle
