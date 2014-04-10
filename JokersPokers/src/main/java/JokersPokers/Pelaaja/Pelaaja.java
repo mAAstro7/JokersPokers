@@ -15,7 +15,11 @@ public class Pelaaja {
         hanska = new Pokerikasi();
         rollit = new Pelivaraukset();
     }
-    
+    /**
+ * Metodi luo uuden pelikäden pelaajalle
+ * 
+ * @param pakka  Korttipakka josta käsi luodaan
+ */
     public void luoPelikasi (Korttipakka pakka) {
         hanska.luoPokeriKasi(pakka);
     }
