@@ -44,10 +44,10 @@ public class PokeriKasiTest {
     }
     @Test
     public void testaaVaihtuukoKortti() {
-        String vanhapakka = pokerikasi.toString();
+        String vanhahanska = pokerikasi.toString();
         Kortti kortti = pokerikasi.getViimeinenKortti();
         this.pokerikasi.vaihdaKortti(pakka, kortti);
-        assertFalse("samat on", pokerikasi.toString().equals(vanhapakka));
+        assertFalse("samat on", pokerikasi.toString().equals(vanhahanska));
     }
     
 }
