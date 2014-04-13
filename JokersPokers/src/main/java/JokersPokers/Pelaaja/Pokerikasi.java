@@ -86,10 +86,8 @@ public class Pokerikasi {
     public void vaihdaKortti(Korttipakka pakka, Kortti kortti) {
 
         poistaKortti(kortti);
-        pakka.poistaKortti(kortti);
         Kortti arvottu = pakka.arvoKortti();
         lisaaKortti(arvottu);
-        pakka.poistaKortti(arvottu);
     }
     
     /**
