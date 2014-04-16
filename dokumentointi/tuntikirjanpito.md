@@ -67,8 +67,9 @@ Lisätiedot: Koodia tehty lisää ja uudet metodit testattu, sekä hieman vanhoj
 
 Viikko: 6
 
-Kätetty aika: 2h
+Kätetty aika: 4h
 
-Keskiviikko 16.4
+Sunnuntai 12.4 1h
+Keskiviikko 16.4 3h
 
 
