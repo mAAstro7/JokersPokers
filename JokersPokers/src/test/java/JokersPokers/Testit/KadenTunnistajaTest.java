@@ -118,8 +118,8 @@ public class KadenTunnistajaTest {
         this.kasi = new Pokerikasi(kortti1, kortti2, kortti3, kortti4, kortti5);
         assertEquals(true, tunnistaja.onkoVarisuora(kasi));
     }
-    
-        @Test
+
+    @Test
     public void tunnistaakoRoyalVarisuoran() {
         Kortti kortti1 = new Kortti("hertta", 10);
         Kortti kortti2 = new Kortti("hertta", 11);
@@ -128,5 +128,81 @@ public class KadenTunnistajaTest {
         Kortti kortti5 = new Kortti("hertta", 14);
         this.kasi = new Pokerikasi(kortti1, kortti2, kortti3, kortti4, kortti5);
         assertEquals(true, tunnistaja.onkoKuningasVarisuora(kasi));
+    }
+
+    @Test
+    public void tunnistaakoNeloset() {
+        Kortti kortti1 = new Kortti("hertta", 14);
+        Kortti kortti2 = new Kortti("ruutu", 10);
+        Kortti kortti3 = new Kortti("pata", 10);
+        Kortti kortti4 = new Kortti("risti", 10);
+        Kortti kortti5 = new Kortti("hertta", 10);
+        this.kasi = new Pokerikasi(kortti1, kortti2, kortti3, kortti4, kortti5);
+        assertEquals(true, tunnistaja.onkoNeloset(kasi));
+    }
+
+    @Test
+    public void tunnistaakoEtteKasiEiOleNeloset() {
+        Kortti kortti1 = new Kortti("hertta", 10);
+        Kortti kortti2 = new Kortti("ruutu", 7);
+        Kortti kortti3 = new Kortti("pata", 10);
+        Kortti kortti4 = new Kortti("risti", 10);
+        Kortti kortti5 = new Kortti("hertta", 14);
+        this.kasi = new Pokerikasi(kortti1, kortti2, kortti3, kortti4, kortti5);
+        assertEquals(false, tunnistaja.onkoNeloset(kasi));
+    }
+
+    @Test
+    public void tunnistaakoTayskaden() {
+        Kortti kortti1 = new Kortti("hertta", 4);
+        Kortti kortti2 = new Kortti("ruutu", 10);
+        Kortti kortti3 = new Kortti("pata", 10);
+        Kortti kortti4 = new Kortti("risti", 10);
+        Kortti kortti5 = new Kortti("ruutu", 4);
+        this.kasi = new Pokerikasi(kortti1, kortti2, kortti3, kortti4, kortti5);
+        assertEquals(true, tunnistaja.onkoTaysKasi(kasi));
+    }
+    
+     @Test
+    public void tunnistaakoEttaKasiEiOleTayskasi() {
+        Kortti kortti1 = new Kortti("hertta", 4);
+        Kortti kortti2 = new Kortti("ruutu", 10);
+        Kortti kortti3 = new Kortti("pata", 10);
+        Kortti kortti4 = new Kortti("risti", 2);
+        Kortti kortti5 = new Kortti("ruutu", 4);
+        this.kasi = new Pokerikasi(kortti1, kortti2, kortti3, kortti4, kortti5);
+        assertEquals(false, tunnistaja.onkoTaysKasi(kasi));
+    }
+    
+         @Test
+    public void tunnistaakoKolmoset() {
+        Kortti kortti1 = new Kortti("hertta", 4);
+        Kortti kortti2 = new Kortti("ruutu", 10);
+        Kortti kortti3 = new Kortti("pata", 10);
+        Kortti kortti4 = new Kortti("risti", 2);
+        Kortti kortti5 = new Kortti("ruutu", 10);
+        this.kasi = new Pokerikasi(kortti1, kortti2, kortti3, kortti4, kortti5);
+        assertEquals(true, tunnistaja.onkoKolmoset(kasi));
+    }
+        @Test
+    public void tunnistaakoepaKolmoset() {
+        Kortti kortti1 = new Kortti("hertta", 4);
+        Kortti kortti2 = new Kortti("ruutu", 10);
+        Kortti kortti3 = new Kortti("pata", 2);
+        Kortti kortti4 = new Kortti("risti", 2);
+        Kortti kortti5 = new Kortti("ruutu", 10);
+        this.kasi = new Pokerikasi(kortti1, kortti2, kortti3, kortti4, kortti5);
+        assertEquals(false, tunnistaja.onkoKolmoset(kasi));
+    }
+    
+          @Test
+    public void tunnistaakoKaksiParia() {
+        Kortti kortti1 = new Kortti("hertta", 4);
+        Kortti kortti2 = new Kortti("ruutu", 10);
+        Kortti kortti3 = new Kortti("pata", 2);
+        Kortti kortti4 = new Kortti("risti", 2);
+        Kortti kortti5 = new Kortti("ruutu", 10);
+        this.kasi = new Pokerikasi(kortti1, kortti2, kortti3, kortti4, kortti5);
+        assertEquals(true, tunnistaja.onkoRattaat(kasi));
     }
 }

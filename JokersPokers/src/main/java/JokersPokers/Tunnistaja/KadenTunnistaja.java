@@ -49,6 +49,118 @@ public class KadenTunnistaja {
     }
 
     /**
+     * Metodi tarkistaa onko annettu pokerikäsi neloset apumuuttujan avulla
+     *
+     * @return false/true Palauttaa tiedon onko käsi neloset
+     */
+    public boolean onkoNeloset(Pokerikasi kasi) {
+        int apum = 0;
+        for (int i = 0; i < 2; i++) {
+            for (int k = i + 1; k < 5; k++) {
+                if (kasi.getKortti(i).getArvo() == kasi.getKortti(k).getArvo()) {
+                    apum++;
+                }
+            }
+            if (apum == 3) {
+                return true;
+            } else {
+                apum = 0;
+            }
+        }
+        return false;
+
+    }
+
+    /**
+     * Metodi tarkistaa onko annettu pokerikäsi Täyskäsi arraylistin avulla.
+     *
+     * @return false/true Palauttaa tiedon onko käsi täyskäsi
+     */
+    public boolean onkoTaysKasi(Pokerikasi kasi) {
+        ArrayList<Integer> lista = new ArrayList<Integer>();
+
+        for (int i = 0; i < 5; i++) {
+            lista.add(kasi.getKortti(i).getArvo());
+        }
+        Collections.sort(lista);
+        if (lista.get(0) == lista.get(2)) {
+            if (lista.get(3) == lista.get(4)) {
+                return true;
+            } else {
+                return false;
+            }
+
+        } else if (lista.get(0) == lista.get(1)) {
+            if (lista.get(2) == lista.get(4)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+
+    }
+
+    /**
+     * Metodi tarkistaa onko annettu pokerikäsi kolmoset apumuuttjien avulla.
+     * apum pitää laskee monta samaa korttia kädessä on, kolmostenArvo pitää
+     * huolen että kolmosiksi ei lasketa kahtaparia koska Arraylistin contains
+     * metodiin ei voida laittaa hakuehtoa.
+     *
+     * @return false/true Palauttaa tiedon onko käsi kolmoset
+     */
+    public boolean onkoKolmoset(Pokerikasi kasi) {
+        int apum = 0;
+        int kolmostenArvo = 0;
+        ArrayList<Integer> lista = new ArrayList<Integer>();
+        for (int i = 0; i < 5; i++) {
+            if (lista.contains(kasi.getKortti(i).getArvo())) {
+                if (kolmostenArvo == 0 || kolmostenArvo == kasi.getKortti(i).getArvo()) {
+                    apum++;
+                    kolmostenArvo = kasi.getKortti(i).getArvo();
+                }
+
+            } else {
+                lista.add(kasi.getKortti(i).getArvo());
+            }
+        }
+
+        if (apum == 2) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    /**
+     * Metodi tarkistaa onko annettu pokerikäsi kaksi paria arraylistin avulla.
+     * Tälläisenään metodi palauttaa myös true kolmosilla, tästä ei tarvitse
+     * huolehtia koska käden tarkistus ainaa alka parhaasta mahdollisesta joten
+     * metodia ei tarvita jos käsi on kolmoset.
+     *
+     *
+     * @return false/true Palauttaa tiedon onko käsi väri
+     */
+    public boolean onkoRattaat(Pokerikasi kasi) { //rattaat = kaksi paria
+
+        ArrayList<Integer> lista = new ArrayList<Integer>();
+        lista.add(kasi.getKortti(0).getArvo());
+        for (int i = 1; i < kasi.getKorttienlkmKadessa(); i++) {
+            if (!lista.contains(kasi.getKortti(i).getArvo())) {
+                lista.add(kasi.getKortti(i).getArvo());
+            }
+        }
+        if (lista.size() == 3) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    /**
      * Metodi tarkistaa onko annettu pokerikäsi väri arraylistin avulla.
      *
      * @return false/true Palauttaa tiedon onko käsi väri

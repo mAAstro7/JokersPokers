@@ -50,9 +50,7 @@ public class Pokerikasi {
      * @return pokerikasi.get(indeksi).getArvo(); Palauttaa kortin arvon (2-14)
      
      */
-    public int getKorttiArvo(int indeksi) {
-        return pokerikasi.get(indeksi).getArvo();
-    }
+
 
 /**
      * Metodi poistaa tietyn kortin
