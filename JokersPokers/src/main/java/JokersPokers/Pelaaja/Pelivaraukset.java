@@ -6,9 +6,11 @@ package JokersPokers.Pelaaja;
 public class Pelivaraukset {
 
     private double rahat;
+    private double panos;
 
     public Pelivaraukset() {
         rahat = 0;
+        panos = 0.2;
     }
 
 /**
@@ -22,6 +24,29 @@ public class Pelivaraukset {
         }
 
     }
+    
+    public void setPanos(double betsi) {
+        this.panos = betsi;
+    }
+    
+    
+/**
+     * metodi kasvattaa panosta
+     * panosta voi lisätä 2e asti, jonka jälkeen aloitetaan 20snt uudestaan
+
+     */
+    public void kasvataPanosta(){
+      this.panos += 0.2;  
+      if (this.panos > 2) {
+          this.panos = 0.2;
+      } else if (this.panos>getRahat()) {
+          this.panos = 0.2;
+      }
+    }
+    
+    public double getPanos() {
+        return this.panos;
+    }
 
     public double getRahat() {
         return this.rahat;
@@ -31,8 +56,8 @@ public class Pelivaraukset {
      * metodi poistaa panoksen verran pelivarauksista jos pelivarauksissa on tarpeeksi rahaa
      * @param panos Käyttäjän valitsema panos
      */
-    public void poistaPanos(double panos) {
-        if (getRahat() >= panos) {
+    public void poistaPanos() {
+        if (getRahat() >= this.panos) {
             this.rahat = this.rahat - panos;
         }
 
@@ -44,8 +69,9 @@ public class Pelivaraukset {
      * @param panos  Panos millä on pelattu
      * @param kerroin  Voittavan käden kerroin
      */
-    public void lisaaVoitto(double panos, int kerroin) {
-        rahat = rahat + (panos * kerroin);
+    public void lisaaVoitto(int kerroin) {
+        this.panos = panos;
+        rahat = rahat + (this.panos * kerroin);
         //pelivaraukset rajattu 500e
         if (getRahat() > 500) {
             this.rahat = 500;

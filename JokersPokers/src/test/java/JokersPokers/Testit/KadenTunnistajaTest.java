@@ -19,15 +19,11 @@ import static org.junit.Assert.*;
 public class KadenTunnistajaTest {
 
     private KadenTunnistaja tunnistaja;
-    private ValmiitPokerikadet kadet;
     private Pokerikasi kasi;
 
     public KadenTunnistajaTest() {
 
-        this.kadet = new ValmiitPokerikadet();
         tunnistaja = new KadenTunnistaja();
-        kadet.luoListaKasista();
-        tunnistaja.setValmiitPokerikadet(kadet);
 
     }
 
@@ -162,8 +158,8 @@ public class KadenTunnistajaTest {
         this.kasi = new Pokerikasi(kortti1, kortti2, kortti3, kortti4, kortti5);
         assertEquals(true, tunnistaja.onkoTaysKasi(kasi));
     }
-    
-     @Test
+
+    @Test
     public void tunnistaakoEttaKasiEiOleTayskasi() {
         Kortti kortti1 = new Kortti("hertta", 4);
         Kortti kortti2 = new Kortti("ruutu", 10);
@@ -173,8 +169,8 @@ public class KadenTunnistajaTest {
         this.kasi = new Pokerikasi(kortti1, kortti2, kortti3, kortti4, kortti5);
         assertEquals(false, tunnistaja.onkoTaysKasi(kasi));
     }
-    
-         @Test
+
+    @Test
     public void tunnistaakoKolmoset() {
         Kortti kortti1 = new Kortti("hertta", 4);
         Kortti kortti2 = new Kortti("ruutu", 10);
@@ -184,7 +180,8 @@ public class KadenTunnistajaTest {
         this.kasi = new Pokerikasi(kortti1, kortti2, kortti3, kortti4, kortti5);
         assertEquals(true, tunnistaja.onkoKolmoset(kasi));
     }
-        @Test
+
+    @Test
     public void tunnistaakoepaKolmoset() {
         Kortti kortti1 = new Kortti("hertta", 4);
         Kortti kortti2 = new Kortti("ruutu", 10);
@@ -194,8 +191,8 @@ public class KadenTunnistajaTest {
         this.kasi = new Pokerikasi(kortti1, kortti2, kortti3, kortti4, kortti5);
         assertEquals(false, tunnistaja.onkoKolmoset(kasi));
     }
-    
-          @Test
+
+    @Test
     public void tunnistaakoKaksiParia() {
         Kortti kortti1 = new Kortti("hertta", 4);
         Kortti kortti2 = new Kortti("ruutu", 10);

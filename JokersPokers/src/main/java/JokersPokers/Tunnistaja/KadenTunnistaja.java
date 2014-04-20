@@ -13,13 +13,6 @@ public class KadenTunnistaja {
     private ValmiitPokerikadet valmiitkadet;
 
     public KadenTunnistaja() {
-        valmiitkadet = new ValmiitPokerikadet();
-        valmiitkadet.luoListaKasista();
-
-    }
-
-    public void setValmiitPokerikadet(ValmiitPokerikadet kasi) {
-        this.valmiitkadet = kasi;
     }
 
     public ValmisPokerikasi palautaKasi(Pokerikasi kasi) {
