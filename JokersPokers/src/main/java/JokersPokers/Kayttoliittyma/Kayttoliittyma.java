@@ -19,7 +19,9 @@ public class Kayttoliittyma implements Runnable {
     private Pelaaja pelaaja;
     private KadenTunnistaja tunnistaja;
     private ValmiitPokerikadet listaValmiistaKasista;
+    //kuuntelijat
     private PelivarauksetKuuntelija pvKuuntelija;
+    private PelaaKuuntelija pelaaKuuntelija;
 
     @Override
     public void run() {
@@ -37,20 +39,21 @@ public class Kayttoliittyma implements Runnable {
         LuoPelaaja();
         LuoKadenTunnistaja();
         LuoListaValmiistaKasista();
+        container.add(LuoKortit(), BorderLayout.CENTER);
         container.add(LuoAlariviPainikkeet(), BorderLayout.SOUTH);
         container.add(LuoYlariviSetit(), BorderLayout.NORTH);
-        container.add(LuoKortit(),BorderLayout.CENTER);
+
 
     }
 
     private JPanel LuoKortit() {
 
         JPanel panel = new JPanel(new GridLayout(1, 5));
-        JButton yksi = new JButton("Kasvata panosta");
-        JButton kaksi = new JButton("Pelaa");
-        JButton kolme = new JButton("Kasvata panosta");
-        JButton nelja = new JButton("Pelaa");
-        JButton viisi = new JButton("Kasvata panosta");
+        JButton yksi = new JButton("KORTTI");
+        JButton kaksi = new JButton("KORTTI");
+        JButton kolme = new JButton("KORTTI");
+        JButton nelja = new JButton("KORTTI");
+        JButton viisi = new JButton("KORTTI");
 
 
         panel.add(yksi);
@@ -59,9 +62,7 @@ public class Kayttoliittyma implements Runnable {
         panel.add(nelja);
         panel.add(viisi);
 
-
-
-
+        this.pelaaKuuntelija = new PelaaKuuntelija(this.pelaaja.getHanska(), yksi, kaksi, kolme, nelja, viisi);
         return panel;
 
     }
@@ -89,15 +90,18 @@ public class Kayttoliittyma implements Runnable {
         JPanel panel = new JPanel(new GridLayout(1, 3));
         JButton panos = new JButton("Kasvata panosta");
         JButton pelaa = new JButton("Pelaa");
-        JLabel tyhja = new JLabel("");
+        JButton vaihdaKortit = new JButton("Vaihda valitut kortit");
 
         panel.add(panos);
-        panel.add(tyhja);
+        panel.add(vaihdaKortit);
         panel.add(pelaa);
 
 
         this.pvKuuntelija = new PelivarauksetKuuntelija(panos, this.pelaaja.getPelivaraukset());
         panos.addActionListener(pvKuuntelija);
+        pelaa.addActionListener(pelaaKuuntelija);
+        pelaaKuuntelija.setKortinvaihtoButton(vaihdaKortit);
+        vaihdaKortit.addActionListener(pelaaKuuntelija);
 
         return panel;
     }
