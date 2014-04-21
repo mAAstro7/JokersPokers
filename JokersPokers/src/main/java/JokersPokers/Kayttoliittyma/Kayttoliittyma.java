@@ -5,7 +5,8 @@ import JokersPokers.Pelaaja.*;
 import JokersPokers.Pokerikadet.ValmiitPokerikadet;
 import JokersPokers.Tunnistaja.KadenTunnistaja;
 import java.awt.*;
-import java.awt.event.*;
+import java.io.*;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 /**
@@ -48,14 +49,24 @@ public class Kayttoliittyma implements Runnable {
 
     private JPanel LuoKortit() {
 
-        JPanel panel = new JPanel(new GridLayout(1, 5));
+        JPanel panel = new JPanel(new GridLayout(2, 5));
+        
+        JButton kuva1 = new JButton("KUVA");
+        JButton kuva2 = new JButton("KUVA");
+        JButton kuva3 = new JButton("KUVA");
+        JButton kuva4 = new JButton("KUVA");
+        JButton kuva5 = new JButton("KUVA");
         JButton yksi = new JButton("KORTTI");
         JButton kaksi = new JButton("KORTTI");
         JButton kolme = new JButton("KORTTI");
         JButton nelja = new JButton("KORTTI");
         JButton viisi = new JButton("KORTTI");
 
-
+        panel.add(kuva1);
+        panel.add(kuva2);
+        panel.add(kuva3);
+        panel.add(kuva4);
+        panel.add(kuva5);
         panel.add(yksi);
         panel.add(kaksi);
         panel.add(kolme);
@@ -100,8 +111,11 @@ public class Kayttoliittyma implements Runnable {
         this.pvKuuntelija = new PelivarauksetKuuntelija(panos, this.pelaaja.getPelivaraukset());
         panos.addActionListener(pvKuuntelija);
         pelaa.addActionListener(pelaaKuuntelija);
+        vaihdaKortit.setEnabled(false);
         pelaaKuuntelija.setKortinvaihtoButton(vaihdaKortit);
         vaihdaKortit.addActionListener(pelaaKuuntelija);
+        pelaaKuuntelija.setPanos(panos);
+        pelaaKuuntelija.setPelaa(pelaa);
 
         return panel;
     }

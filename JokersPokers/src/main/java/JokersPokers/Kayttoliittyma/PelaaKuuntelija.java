@@ -15,6 +15,16 @@ public class PelaaKuuntelija implements ActionListener {
     private JButton kortti4;
     private JButton kortti5;
     private JButton kortinvaihto;
+    private JButton panos;
+    private JButton pelaa;
+
+    public void setPelaa(JButton pelaa) {
+        this.pelaa = pelaa;
+    }
+
+    public void setPanos(JButton panos) {
+        this.panos = panos;
+    }
 
     public PelaaKuuntelija(Pokerikasi pkasi, JButton kortti1, JButton kortti2, JButton kortti3, JButton kortti4, JButton kortti5) {
         this.pkasi = pkasi;
@@ -28,6 +38,7 @@ public class PelaaKuuntelija implements ActionListener {
     public void setKortinvaihtoButton (JButton b) {
         this.kortinvaihto = b;
     }
+    
 
     public void setPokerikasi (Pokerikasi k) {
         this.pkasi = k;
@@ -51,6 +62,11 @@ public class PelaaKuuntelija implements ActionListener {
         kortti3.setText(pkasi.getKortti(2).toString());
         kortti4.setText(pkasi.getKortti(3).toString());
         kortti5.setText(pkasi.getKortti(4).toString());
+        panos.setEnabled(false);
+        pelaa.setEnabled(false);
+        kortinvaihto.setEnabled(true);
+        
+        
         }
     }
     
