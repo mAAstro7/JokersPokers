@@ -75,8 +75,9 @@ Keskiviikko 16.4 3h
 
 Viikko: 7
 
-Käytetty aika: 2h
+Käytetty aika: 5h
 
 Maanantai 20.4 2h
+Tiistai 21.4 3h
 
 
