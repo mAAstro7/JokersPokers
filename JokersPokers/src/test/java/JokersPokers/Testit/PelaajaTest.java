@@ -29,7 +29,7 @@ public class PelaajaTest {
     @Test
     public void PelivarauksenSet() {
     hero.setRollit(5);
-    assertEquals(5.00,00 , hero.getRollit().getRahat());
+    assertEquals(5.00,00 , hero.getPelivaraukset().getRahat());
     }
     
     @Test
@@ -51,7 +51,7 @@ public class PelaajaTest {
     @Test
     public void negatiivinenRaha () {
      hero.setRollit(-5);
-    assertEquals(0.00,00 , hero.getRollit().getRahat());
+    assertEquals(0.00,00 , hero.getPelivaraukset().getRahat());
     }
     
     @Test

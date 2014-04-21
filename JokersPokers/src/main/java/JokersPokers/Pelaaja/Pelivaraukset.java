@@ -7,6 +7,7 @@ public class Pelivaraukset {
 
     private double rahat;
     private double panos;
+    private double viimeisinvoitto = 0;
 
     public Pelivaraukset() {
         rahat = 0;
@@ -36,13 +37,18 @@ public class Pelivaraukset {
 
      */
     public void kasvataPanosta(){
-      this.panos += 0.2;  
+      this.panos = 0.2 + this.panos;
       if (this.panos > 2) {
           this.panos = 0.2;
       } else if (this.panos>getRahat()) {
           this.panos = 0.2;
       }
     }
+    
+    public double getViimeisinvoitto() {
+        return this.viimeisinvoitto;
+    }
+    
     
     public double getPanos() {
         return this.panos;
@@ -70,8 +76,9 @@ public class Pelivaraukset {
      * @param kerroin  Voittavan käden kerroin
      */
     public void lisaaVoitto(int kerroin) {
-        this.panos = panos;
-        rahat = rahat + (this.panos * kerroin);
+        viimeisinvoitto = panos*kerroin;
+        rahat = viimeisinvoitto + rahat;
+        
         //pelivaraukset rajattu 500e
         if (getRahat() > 500) {
             this.rahat = 500;

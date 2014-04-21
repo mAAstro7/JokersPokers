@@ -35,9 +35,10 @@ public class Pelaaja {
     }
 
  
-    public Pelivaraukset getRollit() {
+    public Pelivaraukset getPelivaraukset() {
         return rollit;
     }
+    
 
     public void setRollit(double raha) {
         if (raha>0) {
