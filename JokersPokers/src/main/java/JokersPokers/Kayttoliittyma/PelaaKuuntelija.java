@@ -1,7 +1,8 @@
 
 package JokersPokers.Kayttoliittyma;
 
-import JokersPokers.Pelaaja.Pokerikasi;
+import JokersPokers.Pelaaja.*;
+import JokersPokers.Pelaaja.*;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -17,9 +18,19 @@ public class PelaaKuuntelija implements ActionListener {
     private JButton kortinvaihto;
     private JButton panos;
     private JButton pelaa;
+    private Pelivaraukset pelivaraukset;
+    private JLabel pelivarauksettext;
+
+    public void setPelivarauksettext(JLabel pelivarauksettext) {
+        this.pelivarauksettext = pelivarauksettext;
+    }
 
     public void setPelaa(JButton pelaa) {
         this.pelaa = pelaa;
+    }
+
+    public void setPelivaraukset(Pelivaraukset pelivaraukset) {
+        this.pelivaraukset = pelivaraukset;
     }
 
     public void setPanos(JButton panos) {
@@ -53,7 +64,7 @@ public class PelaaKuuntelija implements ActionListener {
         kortti3.setText(pkasi.getKortti(1).toString());
         kortti4.setText(pkasi.getKortti(1).toString());
         kortti5.setText(pkasi.getKortti(1).toString());
-            
+        
             
         } else {
 
@@ -65,7 +76,8 @@ public class PelaaKuuntelija implements ActionListener {
         panos.setEnabled(false);
         pelaa.setEnabled(false);
         kortinvaihto.setEnabled(true);
-        
+        pelivaraukset.poistaPanos();
+        pelivarauksettext.setText("Pelivaraukset: " + pelivaraukset.getRahat() + "" + "e");
         
         }
     }

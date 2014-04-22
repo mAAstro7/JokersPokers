@@ -36,6 +36,7 @@ public class Kayttoliittyma implements Runnable {
     }
 
     private void luoKomponentit(Container container) {
+        this.pelaaKuuntelija = new PelaaKuuntelija(null, null, null, null, null, null);
         LuoKorttipakka();
         LuoPelaaja();
         LuoKadenTunnistaja();
@@ -90,7 +91,7 @@ public class Kayttoliittyma implements Runnable {
         panel.add(pelivaraukset);
 
         pvKuuntelija.setPanosKenttä(panos);
-
+        pelaaKuuntelija.setPelivarauksettext(pelivaraukset);
 
 
 
@@ -116,6 +117,7 @@ public class Kayttoliittyma implements Runnable {
         vaihdaKortit.addActionListener(pelaaKuuntelija);
         pelaaKuuntelija.setPanos(panos);
         pelaaKuuntelija.setPelaa(pelaa);
+        pelaaKuuntelija.setPelivaraukset(pelaaja.getPelivaraukset());
 
         return panel;
     }
