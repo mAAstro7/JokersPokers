@@ -5,7 +5,10 @@ import JokersPokers.Pelaaja.*;
 import JokersPokers.Pokerikadet.ValmiitPokerikadet;
 import JokersPokers.Tunnistaja.KadenTunnistaja;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -31,11 +34,15 @@ public class Kayttoliittyma implements Runnable {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        luoKomponentit(frame);
+        try {
+            luoKomponentit(frame);
+        } catch (IOException ex) {
+            Logger.getLogger(Kayttoliittyma.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 
-    private void luoKomponentit(Container container) {
+    private void luoKomponentit(Container container) throws IOException {
         this.pelaaKuuntelija = new PelaaKuuntelija(null, null, null, null, null, null);
         LuoKorttipakka();
         LuoPelaaja();
@@ -48,20 +55,28 @@ public class Kayttoliittyma implements Runnable {
 
     }
 
-    private JPanel LuoKortit() {
+    private JPanel LuoKortit() throws IOException {
 
         JPanel panel = new JPanel(new GridLayout(2, 5));
-        
-        JButton kuva1 = new JButton("KUVA");
-        JButton kuva2 = new JButton("KUVA");
-        JButton kuva3 = new JButton("KUVA");
-        JButton kuva4 = new JButton("KUVA");
-        JButton kuva5 = new JButton("KUVA");
+
+        JLabel kuva1 = new JLabel();
+        JLabel kuva2 = new JLabel();
+        JLabel kuva3 = new JLabel();
+        JLabel kuva4 = new JLabel();
+        JLabel kuva5 = new JLabel();
+    
+
+  
+  
+
         JButton yksi = new JButton("KORTTI");
         JButton kaksi = new JButton("KORTTI");
         JButton kolme = new JButton("KORTTI");
         JButton nelja = new JButton("KORTTI");
         JButton viisi = new JButton("KORTTI");
+//          BufferedImage myPicture = ImageIO.read(new File("src/main/resources/hertta2.png"));
+//        JLabel picLabel = new JLabel(new ImageIcon(myPicture));
+//        panel.add(picLabel);
 
         panel.add(kuva1);
         panel.add(kuva2);
