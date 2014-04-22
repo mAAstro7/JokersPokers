@@ -166,7 +166,6 @@ public class KadenTunnistaja {
             }
 
         }
-        System.out.println(lista.toString());
         if (lista.size() == 1) {
 
             return true;

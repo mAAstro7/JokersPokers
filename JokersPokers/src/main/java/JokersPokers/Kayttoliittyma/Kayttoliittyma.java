@@ -23,6 +23,7 @@ public class Kayttoliittyma implements Runnable {
     private Pelaaja pelaaja;
     private KadenTunnistaja tunnistaja;
     private ValmiitPokerikadet listaValmiistaKasista;
+    private boolean kierroskesken = true;
     //kuuntelijat
     private PelivarauksetKuuntelija pvKuuntelija;
     private PelaaKuuntelija pelaaKuuntelija;
@@ -34,15 +35,10 @@ public class Kayttoliittyma implements Runnable {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        try {
-            luoKomponentit(frame);
-        } catch (IOException ex) {
-            Logger.getLogger(Kayttoliittyma.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+        luoKomponentit(frame);
     }
 
-    private void luoKomponentit(Container container) throws IOException {
+    private void luoKomponentit(Container container) {
         this.pelaaKuuntelija = new PelaaKuuntelija(null, null, null, null, null, null);
         LuoKorttipakka();
         LuoPelaaja();
@@ -52,10 +48,9 @@ public class Kayttoliittyma implements Runnable {
         container.add(LuoAlariviPainikkeet(), BorderLayout.SOUTH);
         container.add(LuoYlariviSetit(), BorderLayout.NORTH);
 
-
     }
 
-    private JPanel LuoKortit() throws IOException {
+    private JPanel LuoKortit() {
 
         JPanel panel = new JPanel(new GridLayout(2, 5));
 
@@ -64,19 +59,13 @@ public class Kayttoliittyma implements Runnable {
         JLabel kuva3 = new JLabel();
         JLabel kuva4 = new JLabel();
         JLabel kuva5 = new JLabel();
-    
 
-  
-  
+        JButton yksi = new JButton("VAIHDA");
+        JButton kaksi = new JButton("VAIHDA");
+        JButton kolme = new JButton("VAIHDA");
+        JButton nelja = new JButton("VAIHDA");
+        JButton viisi = new JButton("VAIHDA");
 
-        JButton yksi = new JButton("KORTTI");
-        JButton kaksi = new JButton("KORTTI");
-        JButton kolme = new JButton("KORTTI");
-        JButton nelja = new JButton("KORTTI");
-        JButton viisi = new JButton("KORTTI");
-//          BufferedImage myPicture = ImageIO.read(new File("src/main/resources/hertta2.png"));
-//        JLabel picLabel = new JLabel(new ImageIcon(myPicture));
-//        panel.add(picLabel);
 
         panel.add(kuva1);
         panel.add(kuva2);
@@ -89,7 +78,7 @@ public class Kayttoliittyma implements Runnable {
         panel.add(nelja);
         panel.add(viisi);
 
-        this.pelaaKuuntelija = new PelaaKuuntelija(this.pelaaja.getHanska(), yksi, kaksi, kolme, nelja, viisi);
+        this.pelaaKuuntelija = new PelaaKuuntelija(this.pelaaja.getHanska(), kuva1, kuva2, kuva3, kuva4, kuva5);
         return panel;
 
     }
@@ -133,6 +122,9 @@ public class Kayttoliittyma implements Runnable {
         pelaaKuuntelija.setPanos(panos);
         pelaaKuuntelija.setPelaa(pelaa);
         pelaaKuuntelija.setPelivaraukset(pelaaja.getPelivaraukset());
+        pelaaKuuntelija.setListaValmiistaKasista(listaValmiistaKasista);
+        pelaaKuuntelija.setTunnistaja(tunnistaja);
+        pelaaKuuntelija.setPakka(pakka);
 
         return panel;
     }
@@ -144,7 +136,6 @@ public class Kayttoliittyma implements Runnable {
 
     public void LuoPelaaja() {
         this.pelaaja = new Pelaaja();
-        pelaaja.luoPelikasi(pakka);
         pelaaja.getPelivaraukset().lisaaPelivarauksia(10.00);
 
     }
