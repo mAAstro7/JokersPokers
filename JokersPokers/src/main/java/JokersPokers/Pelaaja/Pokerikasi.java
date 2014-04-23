@@ -34,6 +34,7 @@ public class Pokerikasi {
     public void luoPokeriKasi(Korttipakka pakka) {
 
         for (int i = pokerikasi.size(); i < 5; i++) {
+            
             pokerikasi.add(pakka.arvoKortti());
         }
 

@@ -1,5 +1,6 @@
 package JokersPokers.Kayttoliittyma;
 
+import JokersPokers.Kortti.Kortti;
 import JokersPokers.Kortti.Korttipakka;
 import JokersPokers.Pelaaja.*;
 import JokersPokers.Pelaaja.*;
@@ -31,6 +32,29 @@ public class PelaaKuuntelija implements ActionListener {
     private Pelivaraukset pelivaraukset;
     private JLabel pelivarauksettext;
     private Korttipakka pakka;
+    private JButton ekaL;
+    private JButton tokaL;
+    private JButton kolL;
+    private JButton nelL;
+    private JButton viidL;
+
+    public PelaaKuuntelija(Pokerikasi pkasi, JLabel kortti1, JLabel kortti2, JLabel kortti3, JLabel kortti4, JLabel kortti5) {
+        this.pkasi = pkasi;
+        this.kortti1 = kortti1;
+        this.kortti2 = kortti2;
+        this.kortti3 = kortti3;
+        this.kortti4 = kortti4;
+        this.kortti5 = kortti5;
+    }
+
+    public void setKaikki(Pokerikasi pkasi, JLabel kortti1, JLabel kortti2, JLabel kortti3, JLabel kortti4, JLabel kortti5) {
+        this.pkasi = pkasi;
+        this.kortti1 = kortti1;
+        this.kortti2 = kortti2;
+        this.kortti3 = kortti3;
+        this.kortti4 = kortti4;
+        this.kortti5 = kortti5;
+    }
 
     public void setTunnistaja(KadenTunnistaja tunnistaja) {
         this.tunnistaja = tunnistaja;
@@ -52,21 +76,21 @@ public class PelaaKuuntelija implements ActionListener {
         this.pelaa = pelaa;
     }
 
+    public void setLukinnat(JButton ekaL, JButton tokaL, JButton kolmasL, JButton neljasL, JButton viidesL) {
+        this.ekaL = ekaL;
+        this.tokaL = tokaL;
+        this.kolL = kolmasL;
+        this.nelL = neljasL;
+        this.viidL = viidesL;
+
+    }
+
     public void setPelivaraukset(Pelivaraukset pelivaraukset) {
         this.pelivaraukset = pelivaraukset;
     }
 
     public void setPanos(JButton panos) {
         this.panos = panos;
-    }
-
-    public PelaaKuuntelija(Pokerikasi pkasi, JLabel kortti1, JLabel kortti2, JLabel kortti3, JLabel kortti4, JLabel kortti5) {
-        this.pkasi = pkasi;
-        this.kortti1 = kortti1;
-        this.kortti2 = kortti2;
-        this.kortti3 = kortti3;
-        this.kortti4 = kortti4;
-        this.kortti5 = kortti5;
     }
 
     public void setKortinvaihtoButton(JButton b) {
@@ -79,15 +103,33 @@ public class PelaaKuuntelija implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == pelaa) { 
-            pakka.luoKorttipakka();
-            Pokerikasi uusikasi = new Pokerikasi();
-            uusikasi.luoPokeriKasi(pakka);
-            this.pkasi = uusikasi;
-            this.pakka = pakka;
-            
-            System.out.println(pkasi.getKortti(0).toString());
 
+        if (e.getSource() == this.ekaL) {
+            System.out.println(pkasi.toString());
+            pkasi.vaihdaKortti(pakka, pkasi.getKortti(0));
+            System.out.println(pkasi.toString());
+        } else if (e.getSource() == tokaL) {
+                       System.out.println(pkasi.toString());
+            pkasi.vaihdaKortti(pakka, pkasi.getKortti(1));
+                       System.out.println(pkasi.toString());
+        } else if (e.getSource() == kolL) {
+                       System.out.println(pkasi.toString());
+            pkasi.vaihdaKortti(pakka, pkasi.getKortti(2));
+                       System.out.println(pkasi.toString());
+        } else if (e.getSource() == nelL) {
+                       System.out.println(pkasi.toString());
+            pkasi.vaihdaKortti(pakka, pkasi.getKortti(3));
+                       System.out.println(pkasi.toString());
+        } else if (e.getSource() == viidL) {
+                       System.out.println(pkasi.toString());
+            pkasi.vaihdaKortti(pakka, pkasi.getKortti(4));
+                       System.out.println(pkasi.toString());
+
+        } else if (e.getSource() == pelaa) {
+            pakka.luoKorttipakka();
+            Pokerikasi kasi = new Pokerikasi();
+            kasi.luoPokeriKasi(pakka);
+            this.pkasi = kasi;
             ImageIcon im = new ImageIcon("kuvat/" + pkasi.getKortti(0).toString() + ".png");
             kortti1.setIcon(im);
             ImageIcon im2 = new ImageIcon("kuvat/" + pkasi.getKortti(1).toString() + ".png");
@@ -107,11 +149,21 @@ public class PelaaKuuntelija implements ActionListener {
 
         } else if (e.getSource() == kortinvaihto) {
 
+            ImageIcon im = new ImageIcon("kuvat/" + pkasi.getKortti(0).toString() + ".png");
+            kortti1.setIcon(im);
+            ImageIcon im2 = new ImageIcon("kuvat/" + pkasi.getKortti(1).toString() + ".png");
+            kortti2.setIcon(im2);
+            ImageIcon im3 = new ImageIcon("kuvat/" + pkasi.getKortti(2).toString() + ".png");
+            kortti3.setIcon(im3);
+            ImageIcon im4 = new ImageIcon("kuvat/" + pkasi.getKortti(3).toString() + ".png");
+            kortti4.setIcon(im4);
+            ImageIcon im5 = new ImageIcon("kuvat/" + pkasi.getKortti(4).toString() + ".png");
+            kortti5.setIcon(im5);
             panos.setEnabled(true);
             pelaa.setEnabled(true);
             tarkistaVoitto();
             pelivarauksettext.setText("Pelivaraukset: " + pelivaraukset.getRahat() + "" + "e");
-            
+
         } else {
         }
     }
@@ -125,16 +177,16 @@ public class PelaaKuuntelija implements ActionListener {
             pelivaraukset.lisaaVoitto(listaValmiistaKasista.getTiettykasi(7).getKerroin());
         } else if (tunnistaja.onkoTaysKasi(pkasi)) {
             pelivaraukset.lisaaVoitto(listaValmiistaKasista.getTiettykasi(6).getKerroin());
-        } else if (tunnistaja.onkoVari(pkasi)) { 
+        } else if (tunnistaja.onkoVari(pkasi)) {
             pelivaraukset.lisaaVoitto(listaValmiistaKasista.getTiettykasi(5).getKerroin());
         } else if (tunnistaja.onkoSuora(pkasi)) {
             pelivaraukset.lisaaVoitto(listaValmiistaKasista.getTiettykasi(4).getKerroin());
-        } else if (tunnistaja.onkoKolmoset(pkasi)) { 
+        } else if (tunnistaja.onkoKolmoset(pkasi)) {
             pelivaraukset.lisaaVoitto(listaValmiistaKasista.getTiettykasi(3).getKerroin());
         } else if (tunnistaja.onkoRattaat(pkasi)) {
             pelivaraukset.lisaaVoitto(listaValmiistaKasista.getTiettykasi(2).getKerroin());
         }
-            
+
         kortinvaihto.setEnabled(false);
     }
 }
