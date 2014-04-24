@@ -78,6 +78,11 @@ public class PelaaKuuntelija implements ActionListener {
         this.kolL = kolmasL;
         this.nelL = neljasL;
         this.viidL = viidesL;
+        this.ekaL.setEnabled(false);
+        this.tokaL.setEnabled(false);
+        this.kolL.setEnabled(false);
+        this.nelL.setEnabled(false);
+        this.viidL.setEnabled(false);
 
     }
 
@@ -101,27 +106,41 @@ public class PelaaKuuntelija implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == this.ekaL) {
-
-//            pkasi.vaihdaKortti(pakka, pkasi.getKortti(0));
+            this.ekaL.setEnabled(false);
             pkasi.vaihdaKorttiIndeksilla(pakka, 0);
+//            pkasi.vaihdaKortti(pakka, pkasi.getKortti(0));
+
         } else if (e.getSource() == tokaL) {
+            this.tokaL.setEnabled(false);
+
             pkasi.vaihdaKorttiIndeksilla(pakka, 1);
 //            pkasi.vaihdaKortti(pakka, pkasi.getKortti(1));
 
         } else if (e.getSource() == kolL) {
+            this.kolL.setEnabled(false);
+
             pkasi.vaihdaKorttiIndeksilla(pakka, 2);
 //            pkasi.vaihdaKortti(pakka, pkasi.getKortti(2));
 
         } else if (e.getSource() == nelL) {
+            this.nelL.setEnabled(false);
+
             pkasi.vaihdaKorttiIndeksilla(pakka, 3);
 //            pkasi.vaihdaKortti(pakka, pkasi.getKortti(3));
 
         } else if (e.getSource() == viidL) {
+            this.viidL.setEnabled(false);
             pkasi.vaihdaKorttiIndeksilla(pakka, 4);
 //            pkasi.vaihdaKortti(pakka, pkasi.getKortti(4));
 
 
         } else if (e.getSource() == pelaa) {
+            this.ekaL.setEnabled(true);
+            this.tokaL.setEnabled(true);
+            this.kolL.setEnabled(true);
+            this.nelL.setEnabled(true);
+            this.viidL.setEnabled(true);
+
             viimeisinvoitto.setText("Viimeisin voitto: " + pelivaraukset.getViimeisinvoitto() + "e");
             pakka.luoKorttipakka();
             Pokerikasi kasi = new Pokerikasi();
@@ -145,7 +164,11 @@ public class PelaaKuuntelija implements ActionListener {
             pelivarauksettext.setText("Pelivaraukset: " + pelivaraukset.getRahat() + "" + "e");
 
         } else if (e.getSource() == kortinvaihto) {
-
+            this.ekaL.setEnabled(false);
+            this.tokaL.setEnabled(false);
+            this.kolL.setEnabled(false);
+            this.nelL.setEnabled(false);
+            this.viidL.setEnabled(false);
             ImageIcon im = new ImageIcon("kuvat/" + pkasi.getKortti(0).toString() + ".png");
             kortti1.setIcon(im);
             ImageIcon im2 = new ImageIcon("kuvat/" + pkasi.getKortti(1).toString() + ".png");
@@ -159,20 +182,19 @@ public class PelaaKuuntelija implements ActionListener {
             panos.setEnabled(true);
             pelaa.setEnabled(true);
             tarkistaVoitto();
-                if (pelivaraukset.getRahat() == 0) {
+            if (pelivaraukset.getRahat() == 0) {
                 pelivaraukset.lisaaPelivarauksia(5);
                 pelivarauksettext.setText("Pelivaraukset: " + pelivaraukset.getRahat() + "" + "e");
-            viimeisinvoitto.setText("Hävisit kaiken, ota 5e lisää");
+                viimeisinvoitto.setText("Hävisit kaiken, ota 5e lisää");
             } else {
-            pelivarauksettext.setText("Pelivaraukset: " + pelivaraukset.getRahat() + "" + "e");
-            viimeisinvoitto.setText("Viimeisin voitto: " + pelivaraukset.getViimeisinvoitto() + "e");
- 
-                }
-        
- 
-            
+                pelivarauksettext.setText("Pelivaraukset: " + pelivaraukset.getRahat() + "" + "e");
+                viimeisinvoitto.setText("Viimeisin voitto: " + pelivaraukset.getViimeisinvoitto() + "e");
+
+            }
+
+
+
         } else {
-            
         }
     }
 
