@@ -37,18 +37,15 @@ public class Pelivaraukset {
      */
     public void kasvataPanosta() {
         this.panos = 0.2 + this.panos;
+        this.panos = Math.round(panos*100);
+        this.panos = panos/100;
         if (this.panos > 2) {
             this.panos = 0.2;
         } else if (this.panos > getRahat()) {
             this.panos = 0.2;
         }
         
-        //alla olevat iffit karsivat pois doublen tyhmän virheen jossa panos voi esim olla 1,6000000001
-        if (this.panos > 0.5 && this.panos < 0.7) {
-            this.panos = 0.6;
-        } else if (this.panos > 1.5 && this.panos < 1.7) {
-            this.panos = 1.6;
-        }
+        
 
     }
 
@@ -73,6 +70,8 @@ public class Pelivaraukset {
     public void poistaPanos() {
         if (getRahat() >= this.panos) {
             this.rahat = this.rahat - panos;
+        this.rahat = Math.round(rahat*100);
+        this.rahat = rahat/100;
         }
 
     }

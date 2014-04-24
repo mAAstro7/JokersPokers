@@ -37,6 +37,7 @@ public class PelaaKuuntelija implements ActionListener {
     private JButton kolL;
     private JButton nelL;
     private JButton viidL;
+    private JLabel viimeisinvoitto;
 
     public PelaaKuuntelija(Pokerikasi pkasi, JLabel kortti1, JLabel kortti2, JLabel kortti3, JLabel kortti4, JLabel kortti5) {
         this.pkasi = pkasi;
@@ -47,13 +48,8 @@ public class PelaaKuuntelija implements ActionListener {
         this.kortti5 = kortti5;
     }
 
-    public void setKaikki(Pokerikasi pkasi, JLabel kortti1, JLabel kortti2, JLabel kortti3, JLabel kortti4, JLabel kortti5) {
-        this.pkasi = pkasi;
-        this.kortti1 = kortti1;
-        this.kortti2 = kortti2;
-        this.kortti3 = kortti3;
-        this.kortti4 = kortti4;
-        this.kortti5 = kortti5;
+    public void setViimeisinvoitto(JLabel viimeisinvoitto) {
+        this.viimeisinvoitto = viimeisinvoitto;
     }
 
     public void setTunnistaja(KadenTunnistaja tunnistaja) {
@@ -105,27 +101,28 @@ public class PelaaKuuntelija implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == this.ekaL) {
-            System.out.println(pkasi.toString());
-            pkasi.vaihdaKortti(pakka, pkasi.getKortti(0));
-            System.out.println(pkasi.toString());
+
+//            pkasi.vaihdaKortti(pakka, pkasi.getKortti(0));
+            pkasi.vaihdaKorttiIndeksilla(pakka, 0);
         } else if (e.getSource() == tokaL) {
-                       System.out.println(pkasi.toString());
-            pkasi.vaihdaKortti(pakka, pkasi.getKortti(1));
-                       System.out.println(pkasi.toString());
+            pkasi.vaihdaKorttiIndeksilla(pakka, 1);
+//            pkasi.vaihdaKortti(pakka, pkasi.getKortti(1));
+
         } else if (e.getSource() == kolL) {
-                       System.out.println(pkasi.toString());
-            pkasi.vaihdaKortti(pakka, pkasi.getKortti(2));
-                       System.out.println(pkasi.toString());
+            pkasi.vaihdaKorttiIndeksilla(pakka, 2);
+//            pkasi.vaihdaKortti(pakka, pkasi.getKortti(2));
+
         } else if (e.getSource() == nelL) {
-                       System.out.println(pkasi.toString());
-            pkasi.vaihdaKortti(pakka, pkasi.getKortti(3));
-                       System.out.println(pkasi.toString());
+            pkasi.vaihdaKorttiIndeksilla(pakka, 3);
+//            pkasi.vaihdaKortti(pakka, pkasi.getKortti(3));
+
         } else if (e.getSource() == viidL) {
-                       System.out.println(pkasi.toString());
-            pkasi.vaihdaKortti(pakka, pkasi.getKortti(4));
-                       System.out.println(pkasi.toString());
+            pkasi.vaihdaKorttiIndeksilla(pakka, 4);
+//            pkasi.vaihdaKortti(pakka, pkasi.getKortti(4));
+
 
         } else if (e.getSource() == pelaa) {
+            viimeisinvoitto.setText("Viimeisin voitto: " + pelivaraukset.getViimeisinvoitto() + "e");
             pakka.luoKorttipakka();
             Pokerikasi kasi = new Pokerikasi();
             kasi.luoPokeriKasi(pakka);
@@ -162,9 +159,20 @@ public class PelaaKuuntelija implements ActionListener {
             panos.setEnabled(true);
             pelaa.setEnabled(true);
             tarkistaVoitto();
+                if (pelivaraukset.getRahat() == 0) {
+                pelivaraukset.lisaaPelivarauksia(5);
+                pelivarauksettext.setText("Pelivaraukset: " + pelivaraukset.getRahat() + "" + "e");
+            viimeisinvoitto.setText("Hävisit kaiken, ota 5e lisää");
+            } else {
             pelivarauksettext.setText("Pelivaraukset: " + pelivaraukset.getRahat() + "" + "e");
-
+            viimeisinvoitto.setText("Viimeisin voitto: " + pelivaraukset.getViimeisinvoitto() + "e");
+ 
+                }
+        
+ 
+            
         } else {
+            
         }
     }
 

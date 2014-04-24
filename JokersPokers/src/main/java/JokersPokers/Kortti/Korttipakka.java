@@ -54,6 +54,7 @@ public class Korttipakka {
  *  Luodaan korttipakka for-looppien avulla
  */
     public void luoKorttipakka() {
+        korttipakka.clear();
         maat.add("pata");
         maat.add("hertta");
         maat.add("ruutu");
@@ -64,7 +65,9 @@ public class Korttipakka {
                 korttipakka.add(kortti);
             }
         }
+
         Kortti kortti = new Kortti("jokeri", 0);
         korttipakka.add(kortti);
+
     }
 }

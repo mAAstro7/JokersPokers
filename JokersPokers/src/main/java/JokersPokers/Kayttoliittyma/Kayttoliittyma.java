@@ -60,18 +60,11 @@ public class Kayttoliittyma implements Runnable {
         JLabel kuva4 = new JLabel();
         JLabel kuva5 = new JLabel();
 
-        JButton yksi = new JButton("LUKITSE");
-        JButton kaksi = new JButton("LUKITSE");
-        JButton kolme = new JButton("LUKITSE");
-        JButton nelja = new JButton("LUKITSE");
-        JButton viisi = new JButton("LUKITSE");
-
-//        this.pelaaKuuntelija.setLukinnat(yksi, kolme, kolme, nelja, viisi);
-//        yksi.addActionListener(pelaaKuuntelija);
-//        kaksi.addActionListener(pelaaKuuntelija);
-//        kolme.addActionListener(pelaaKuuntelija);
-//        nelja.addActionListener(pelaaKuuntelija);
-//        viisi.addActionListener(pelaaKuuntelija);
+        JButton yksi = new JButton("VAIHDA");
+        JButton kaksi = new JButton("VAIHDA");
+        JButton kolme = new JButton("VAIHDA");
+        JButton nelja = new JButton("VAIHDA");
+        JButton viisi = new JButton("VAIHDA");
 
         panel.add(kuva1);
         panel.add(kuva2);
@@ -84,8 +77,8 @@ public class Kayttoliittyma implements Runnable {
         panel.add(nelja);
         panel.add(viisi);
 
-        this.pelaaKuuntelija.setKaikki(this.pelaaja.getHanska(), kuva1, kuva2, kuva3, kuva4, kuva5);
-        this.pelaaKuuntelija.setLukinnat(yksi, kolme, kolme, nelja, viisi);
+        this.pelaaKuuntelija = new PelaaKuuntelija(this.pelaaja.getHanska(), kuva1, kuva2, kuva3, kuva4, kuva5);
+        this.pelaaKuuntelija.setLukinnat(yksi, kaksi, kolme, nelja, viisi);
 
         yksi.addActionListener(pelaaKuuntelija);
         kaksi.addActionListener(pelaaKuuntelija);
@@ -107,7 +100,8 @@ public class Kayttoliittyma implements Runnable {
         panel.add(panos);
         panel.add(kolme);
         panel.add(pelivaraukset);
-
+        
+        pelaaKuuntelija.setViimeisinvoitto(kolme);
         pvKuuntelija.setPanosKenttä(panos);
         pelaaKuuntelija.setPelivarauksettext(pelivaraukset);
 
