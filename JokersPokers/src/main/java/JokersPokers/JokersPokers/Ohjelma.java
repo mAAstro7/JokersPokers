@@ -1,4 +1,4 @@
-package main.java.JokersPokers.JokersPokers;
+package JokersPokers.JokersPokers;
 
 import main.java.JokersPokers.Kayttoliittyma.Kayttoliittyma;
 import javax.swing.*;
