@@ -1,6 +1,6 @@
-package JokersPokers.JokersPokers;
+package main.java.JokersPokers.JokersPokers;
 
-import JokersPokers.Kayttoliittyma.Kayttoliittyma;
+import main.java.JokersPokers.Kayttoliittyma.Kayttoliittyma;
 import javax.swing.*;
 
 public class Ohjelma {

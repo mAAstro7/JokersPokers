@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package JokersPokers.Testit;
+package test.java.JokersPokers.Testit;
 
-import JokersPokers.Pokerikadet.*;
+import main.java.JokersPokers.Pokerikadet.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

@@ -1,7 +1,7 @@
 
-package JokersPokers.Kayttoliittyma;
+package main.java.JokersPokers.Kayttoliittyma;
 
-import JokersPokers.Pelaaja.*;
+import main.java.JokersPokers.Pelaaja.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;

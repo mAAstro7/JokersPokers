@@ -2,7 +2,7 @@
  * Luokka korttej varten. Jokainen kortti tietää arvonsa sekä maansa
  * 
  */
-package JokersPokers.Kortti;
+package main.java.JokersPokers.Kortti;
 
 
 public class Kortti extends Korttipakka {

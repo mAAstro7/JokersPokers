@@ -1,7 +1,7 @@
 /**
  *  Luokka jokaista pokerikättä varten, suora, väri, etc..
  */
-package JokersPokers.Pokerikadet;
+package main.java.JokersPokers.Pokerikadet;
 
 import java.util.*;
 

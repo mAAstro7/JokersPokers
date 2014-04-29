@@ -5,8 +5,7 @@
  * (ei voida käyddää vertailussa koska hai ja pari molemmat 0 kertoimisia)
  * Kasi on käsi itse kirjoitettuna
  */
-package JokersPokers.Pokerikadet;
-import JokersPokers.Pelaaja.Pokerikasi;
+package main.java.JokersPokers.Pokerikadet;
 
 
 public class ValmisPokerikasi implements Comparable<ValmisPokerikasi> {
