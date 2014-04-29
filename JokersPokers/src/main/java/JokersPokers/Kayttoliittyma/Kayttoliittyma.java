@@ -1,9 +1,9 @@
-package JokersPokers.Kayttoliittyma;
+package main.java.JokersPokers.Kayttoliittyma;
 
-import JokersPokers.Kortti.*;
-import JokersPokers.Pelaaja.*;
-import JokersPokers.Pokerikadet.ValmiitPokerikadet;
-import JokersPokers.Tunnistaja.KadenTunnistaja;
+import main.java.JokersPokers.Kortti.*;
+import main.java.JokersPokers.Pelaaja.*;
+import main.java.JokersPokers.Pokerikadet.ValmiitPokerikadet;
+import main.java.JokersPokers.Tunnistaja.KadenTunnistaja;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
