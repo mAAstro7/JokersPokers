@@ -72,6 +72,8 @@ Kätetty aika: 3h
 
 Keskiviikko 16.4 3h
 
+Lisätiedot: Koodattu dl 5 vaatimukset täyteen
+
 
 Viikko: 7
 
@@ -84,5 +86,13 @@ Tiistai 22.4 3h
 Keskiviikko 23.4 3h
 
 Torstai 24.4 2h
+
+Lisätiedot: Laitettu ohjelma demokuntoon.
+
+Viikko: 8
+
+Käytetty aika: 4h
+
+Tiistai 29.4 4h
 
 
