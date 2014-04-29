@@ -150,10 +150,6 @@ public class PelaaKuuntelija implements ActionListener {
             pakka.luoKorttipakka();
             Pokerikasi kasi = new Pokerikasi();
             kasi.luoPokeriKasi(pakka);
-            //HUOMIO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            kasi.poistaKorttiIndex(0);
-            kasi.lisaaKortti(new Kortti("jokeri", 0));
-            //HUOMIO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             this.pkasi = kasi;
             ImageIcon im = new ImageIcon("kuvat/" + pkasi.getKortti(0).toString() + ".png");
             kortti1.setIcon(im);
@@ -243,7 +239,10 @@ public class PelaaKuuntelija implements ActionListener {
                 
                 kasi.poistaKorttiString(jokeri.toString());
             }
-
+            if (parasKerroin>0) {
+                 pelivaraukset.lisaaVoitto(parasKerroin);
+            }
+           
         } else if (tunnistaja.onkoKuningasVarisuora(pkasi)) {
             pelivaraukset.lisaaVoitto(listaValmiistaKasista.getTiettykasi(9).getKerroin());
         } else if (tunnistaja.onkoVarisuora(pkasi)) {

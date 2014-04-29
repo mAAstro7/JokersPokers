@@ -88,6 +88,8 @@ public class Pelivaraukset {
     public void lisaaVoitto(int kerroin) {
         viimeisinvoitto = panos * kerroin;
         rahat = viimeisinvoitto + rahat;
+        this.viimeisinvoitto = Math.round(viimeisinvoitto * 100);
+        this.viimeisinvoitto = viimeisinvoitto / 100;
         this.rahat = Math.round(rahat * 100);
         this.rahat = rahat / 100;
 
