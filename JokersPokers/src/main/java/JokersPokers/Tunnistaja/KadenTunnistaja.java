@@ -1,11 +1,10 @@
 /**
  * Luokka käsien tunnistamista varten
  */
-package JokersPokers.Tunnistaja;
+package main.java.JokersPokers.Tunnistaja;
 
-import JokersPokers.Pelaaja.Pokerikasi;
-import JokersPokers.Pokerikadet.ValmiitPokerikadet;
-import JokersPokers.Pokerikadet.ValmisPokerikasi;
+import main.java.JokersPokers.Pelaaja.Pokerikasi;
+import main.java.JokersPokers.Pokerikadet.*;
 import java.util.*;
 
 public class KadenTunnistaja {

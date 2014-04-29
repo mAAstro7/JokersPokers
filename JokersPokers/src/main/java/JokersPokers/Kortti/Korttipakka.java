@@ -2,7 +2,7 @@
  * Luokka korttipakkaa varten. Pakka tietää jokaisen kortin
  * 
  */
-package JokersPokers.Kortti;
+package main.java.JokersPokers.Kortti;
 
 import java.util.*;
 

@@ -1,7 +1,8 @@
 /**
  * Luokka hoitaa pelaajan pelivaraukset, eli rahat
+import main.java.JokersPokers.Pelaaja.*;
  */
-package JokersPokers.Pelaaja;
+package main.java.JokersPokers.Pelaaja;
 
 public class Pelivaraukset {
 

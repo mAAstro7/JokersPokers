@@ -1,12 +1,11 @@
-package JokersPokers.Kayttoliittyma;
+package main.java.JokersPokers.Kayttoliittyma;
 
-import JokersPokers.Kortti.Kortti;
-import JokersPokers.Kortti.Korttipakka;
-import JokersPokers.Pelaaja.*;
-import JokersPokers.Pelaaja.*;
-import JokersPokers.Pokerikadet.ValmiitPokerikadet;
-import JokersPokers.Pokerikadet.ValmisPokerikasi;
-import JokersPokers.Tunnistaja.KadenTunnistaja;
+import main.java.JokersPokers.Kortti.Kortti;
+import main.java.JokersPokers.Kortti.Korttipakka;
+import main.java.JokersPokers.Pelaaja.*;
+import main.java.JokersPokers.Pokerikadet.ValmiitPokerikadet;
+import main.java.JokersPokers.Pokerikadet.ValmisPokerikasi;
+import main.java.JokersPokers.Tunnistaja.KadenTunnistaja;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
