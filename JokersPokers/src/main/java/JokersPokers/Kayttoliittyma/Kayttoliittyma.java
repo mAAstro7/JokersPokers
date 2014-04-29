@@ -36,7 +36,16 @@ public class Kayttoliittyma implements Runnable {
         frame.pack();
         frame.setVisible(true);
         luoKomponentit(frame);
+        
     }
+    
+/**
+ * Metodi luo kaikki komponentit mitä käyttöliittymään tarvitaan. Käyttöliittymä on jaettu 3 ryhmään: 
+ * 1: alaosa joka pitää sisällään panoksen kasvatuksen, korttienvaihton ja pelaa painikkeen
+ * 2: keskiosa jossa näkyvät itse kortit sekä kortin vaihto painikkeet
+ * 3: yläpsa jossa näkyvät pelivaraukset, panos sekä viimeisin voitto
+
+ */
 
     private void luoKomponentit(Container container) {
         this.pelaaKuuntelija = new PelaaKuuntelija(null, null, null, null, null, null);
@@ -47,9 +56,14 @@ public class Kayttoliittyma implements Runnable {
         container.add(LuoKortit(), BorderLayout.CENTER);
         container.add(LuoAlariviPainikkeet(), BorderLayout.SOUTH);
         container.add(LuoYlariviSetit(), BorderLayout.NORTH);
+       this.pelaaKuuntelija.setPvkuuntelija(pvKuuntelija);
 
     }
 
+    /**
+ *Metodi luo kortit sekä kyseisen kortin vaihtopainikkeen.
+
+ */
     private JPanel LuoKortit() {
 
         JPanel panel = new JPanel(new GridLayout(2, 5));
@@ -90,6 +104,11 @@ public class Kayttoliittyma implements Runnable {
 
     }
 
+    /**
+ * Metodi luo ylariville tarvittavat JLabelit. Panos, viimeisinvoitto sekä pelivaraukset
+ * Peli antaa 10e oletus pelivarauksena
+
+ */
     private JPanel LuoYlariviSetit() {
         JPanel panel = new JPanel(new GridLayout(1, 3));
 
@@ -101,6 +120,7 @@ public class Kayttoliittyma implements Runnable {
         panel.add(kolme);
         panel.add(pelivaraukset);
         
+
         pelaaKuuntelija.setViimeisinvoitto(kolme);
         pvKuuntelija.setPanosKenttä(panos);
         pelaaKuuntelija.setPelivarauksettext(pelivaraukset);
@@ -120,7 +140,8 @@ public class Kayttoliittyma implements Runnable {
         panel.add(vaihdaKortit);
         panel.add(pelaa);
 
-
+        //pelivarauksia annetaan oletuksena 10e
+        pelaaja.setRollit(10);
         this.pvKuuntelija = new PelivarauksetKuuntelija(panos, this.pelaaja.getPelivaraukset());
         panos.addActionListener(pvKuuntelija);
         pelaa.addActionListener(pelaaKuuntelija);
@@ -144,7 +165,6 @@ public class Kayttoliittyma implements Runnable {
 
     public void LuoPelaaja() {
         this.pelaaja = new Pelaaja();
-        pelaaja.getPelivaraukset().lisaaPelivarauksia(10.00);
 
     }
 
@@ -158,4 +178,5 @@ public class Kayttoliittyma implements Runnable {
         listaValmiistaKasista.luoListaKasista();
 
     }
+
 }

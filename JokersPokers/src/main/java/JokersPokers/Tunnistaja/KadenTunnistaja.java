@@ -229,10 +229,10 @@ public class KadenTunnistaja {
                 }
             }
             return true;
-
-        } else {
+        }  else {
             return false;
         }
+
 
     }
 }

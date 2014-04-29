@@ -41,10 +41,6 @@ public class Pokerikasi {
 
     }
 
-    public Kortti getKortti(int indeksi) {
-        return pokerikasi.get(indeksi);
-    }
-
     /**
      * Metodi hakee halutun kortin arvon
      *
@@ -52,14 +48,33 @@ public class Pokerikasi {
      * @return pokerikasi.get(indeksi).getArvo(); Palauttaa kortin arvon (2-14)
      *
      */
+    public Kortti getKortti(int indeksi) {
+        return pokerikasi.get(indeksi);
+    }
+
     /**
      * Metodi poistaa tietyn kortin
      *
-     * @param kortti Poistettava kortti
+     * @param kortti Poistettava kortti (Kortti olio)
      *
      */
     public void poistaKortti(Kortti kortti) {
         pokerikasi.remove(kortti);
+    }
+       /**
+     * Metodi poistaa tietyn kortin
+     *
+     * @param kortti Poistettava kortti.toString eli esim hertta7
+     *
+     */
+    public void poistaKorttiString(String kortti) {
+        for(int i = 0;i<getKorttienlkmKadessa();i++) {
+            if (pokerikasi.get(i).toString().equals(kortti)) {
+                pokerikasi.remove(i);
+                //jokerilla testatessa mahdollisesti 2x hertta7 joten ei haluta molempien poistuvan
+                break;
+            }
+        }
     }
 
     /**

@@ -32,6 +32,10 @@ public class Korttipakka {
     public void poistaKortti(Kortti poistettava) {
         korttipakka.remove(poistettava);
     }
+    
+    public Kortti gerKortti(int i) {
+        return korttipakka.get(i);
+    }
 
 /**
  * Arpoo pakasta kortin, tätä käytetään 
@@ -70,4 +74,29 @@ public class Korttipakka {
         korttipakka.add(kortti);
 
     }
+    
+ /**
+ *  Luodaan korttipakka for-looppien avulla mutta ei lisätä jokeria.
+ */
+        public void luoKorttipakkaIlmanJokeria() {
+        korttipakka.clear();
+        maat.add("pata");
+        maat.add("hertta");
+        maat.add("ruutu");
+        maat.add("risti");
+        for (int i = 0; i < 4; i++) {
+            for (int k = 2; k <= 14; k++) {
+                Kortti kortti = new Kortti(maat.get(i), k);
+                korttipakka.add(kortti);
+            }
+        }
+
+    }
+         /**
+ *  Lisätään korttipakkaan jokeri, käytetään mahdollisesti extrajokerin lisäämiseen
+ */
+        public void lisaaJokeri () {
+            korttipakka.add(new Kortti("jokeri", 0));
+        }
+                
 }
