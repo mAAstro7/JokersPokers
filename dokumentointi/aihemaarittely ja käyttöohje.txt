@@ -1,4 +1,4 @@
-﻿Aihe: Jokeripokeri peli Javalla.
+﻿Aihe: Jokeripokeri korttipeli (pelikoneesta tuttu!)
 
 Käyttäjät: Pelaaja
 
