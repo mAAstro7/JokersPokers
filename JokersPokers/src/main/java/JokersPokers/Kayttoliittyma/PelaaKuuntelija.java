@@ -233,9 +233,7 @@ public class PelaaKuuntelija implements ActionListener {
                     parasArvo = listaValmiistaKasista.getTiettykasi(4).getArvojarjestys();
                 } else if (tunnistaja.onkoKolmoset(pkasi) && parasArvo < listaValmiistaKasista.getTiettykasi(3).getKerroin()) {
                     parasArvo = listaValmiistaKasista.getTiettykasi(3).getArvojarjestys();
-                } else if (tunnistaja.onkoRattaat(pkasi) && parasArvo < listaValmiistaKasista.getTiettykasi(2).getKerroin()) {
-                    parasArvo = listaValmiistaKasista.getTiettykasi(2).getArvojarjestys();
-                } else if (tunnistaja.onkoHai(kasi) && parasArvo == 0) {
+                }  else if (tunnistaja.onkoHai(kasi) && parasArvo == 0) {
                     parasArvo = -1;
                 } 
 
@@ -244,8 +242,8 @@ public class PelaaKuuntelija implements ActionListener {
             if (parasArvo > 0) {
                 pelivaraukset.lisaaVoitto(parasArvo);
                 return listaValmiistaKasista.arvolla(parasArvo);
-                
-            } else {
+             
+            } else  {
                 return listaValmiistaKasista.arvolla(parasArvo);
             }
             

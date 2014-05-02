@@ -62,6 +62,7 @@ public class ValmiitPokerikadet {
         ValmisPokerikasi kasi1 = new ValmisPokerikasi(0, "Pari");
         kadet.add(kasi1);
         ValmisPokerikasi kasi2 = new ValmisPokerikasi(2, "Kaksi paria");
+        kasi2.setArvojarjestys(1);
         kadet.add(kasi2);
         ValmisPokerikasi kasi3 = new ValmisPokerikasi(2, "Kolmoset");
         kadet.add(kasi3);

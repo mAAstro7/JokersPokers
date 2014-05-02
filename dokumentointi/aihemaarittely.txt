@@ -6,7 +6,8 @@ Toiminnot: Pelata jokeripokeria
 
 Pelin kulku: Pelikierros alkaa panoksen valinnalla. Oletuspanoksena on 20snt joten panosta ei ole pakko "valita". Panos on 20snt-2e ja kasvaa 20snt kerrallaan. Pelaaja saa alkupääomaksi 10e
 
-Kun panos on pelaajan mielestä sopiva pelaaja painaa pelaa painiketta. Tällöin pelaajalle jaetaan viisi (5) korttia. Pelaajan on mahdollista vaihtaa 0-5 korttia. Normaalista jokeripokerista eroten pelaaja valitsee vain vaihdettavat kortit eikä niitä mitkä haluaa lukita.
+Kun panos on pelaajan mielestä sopiva pelaaja painaa pelaa painiketta. Tällöin pelaajalle jaetaan viisi (5) korttia. Pelaajan on mahdollista vaihtaa 0-5 korttia. 
+Normaalista jokeripokerista eroten pelaaja valitsee vain vaihdettavat kortit eikä niitä mitkä haluaa lukita.
 
 Kun pelaaja on valinnut mieleiset kortit vaihdettavaksi painaa hän vaihda kortit painiketta. Tämän jälkeen pelaajalle ilmestyy uudet kortit ja mahdollinen voitto maksetaan.
 
