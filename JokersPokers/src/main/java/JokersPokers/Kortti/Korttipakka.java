@@ -29,9 +29,7 @@ public class Korttipakka {
   * @param poistettava Käyttäjän valitsema poistettava kortti
  
  */
-    public void poistaKortti(Kortti poistettava) {
-        korttipakka.remove(poistettava);
-    }
+
     
     public Kortti gerKortti(int i) {
         return korttipakka.get(i);
@@ -45,7 +43,7 @@ public class Korttipakka {
         Random random = new Random();
         int arpa = random.nextInt(korttipakka.size());
         Kortti arvottuKortti = korttipakka.get(arpa);
-        poistaKortti(arvottuKortti);
+        korttipakka.remove(arpa);
         return arvottuKortti;
     }
 

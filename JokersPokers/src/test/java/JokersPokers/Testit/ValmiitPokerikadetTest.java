@@ -60,10 +60,11 @@ public class ValmiitPokerikadetTest {
     }
     
     @Test
-    public void onkoTayskadenNimiOiekin() {
+    public void onkoTayskadenNimiOikein() {
         ValmisPokerikasi testi;
         testi = listakasisata.getTiettykasi("Täyskäsi");
         System.out.println(testi.getKasi());
         assertEquals("Täyskäsi", testi.getKasi());
     }
+    
 }

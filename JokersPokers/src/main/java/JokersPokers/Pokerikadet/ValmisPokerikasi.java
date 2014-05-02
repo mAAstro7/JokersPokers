@@ -13,6 +13,12 @@ public class ValmisPokerikasi implements Comparable<ValmisPokerikasi> {
     private String kasi;
     private int kerroin;
 
+/**
+ *  Konstruktori luo Valmiin Pokerikaden
+ * 
+ * @param kerroin  on pokerikaden voitto kerroin, hai kadelle annetaan kertoimeksi erikseen -1 jotta vertailu häviävien käsien välillä on mahdollista
+ * @param kasi Stringinä pokerikaden nimi, esim suora
+ */
     public ValmisPokerikasi(int kerroin,  String kasi) {
         this.arvojarjestys = kerroin;
         this.kasi = kasi;
@@ -29,10 +35,6 @@ public class ValmisPokerikasi implements Comparable<ValmisPokerikasi> {
 
     public String getKasi() {
         return kasi;
-    }
-
-    public void setKasi(String kasi) {
-        this.kasi = kasi;
     }
 
     public void setArvojarjestys(int arvojarjestys) {

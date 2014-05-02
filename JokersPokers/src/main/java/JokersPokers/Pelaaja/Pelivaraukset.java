@@ -86,7 +86,7 @@ public class Pelivaraukset {
      * @param panos Panos millä on pelattu
      * @param kerroin Voittavan käden kerroin
      */
-    public void lisaaVoitto(int kerroin) {
+    public void lisaaVoitto(double kerroin) {
         viimeisinvoitto = panos * kerroin;
         rahat = viimeisinvoitto + rahat;
         this.viimeisinvoitto = Math.round(viimeisinvoitto * 100);

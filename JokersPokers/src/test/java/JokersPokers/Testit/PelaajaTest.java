@@ -42,7 +42,7 @@ public class PelaajaTest {
     public void kortinVaihto() {
         hero.luoPelikasi(pakka);
         String vanhaHanska = hero.getHanska().toString();
-        Kortti kortti = hero.getHanska().getViimeinenKortti();
+        Kortti kortti = hero.getHanska().getKortti(4);
         hero.getHanska().vaihdaKortti(pakka, kortti);
         assertFalse("samat on", hero.getHanska().toString().equals(vanhaHanska));
         

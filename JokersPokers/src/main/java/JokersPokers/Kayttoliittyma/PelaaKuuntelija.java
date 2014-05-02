@@ -185,7 +185,7 @@ public class PelaaKuuntelija implements ActionListener {
             kortti5.setIcon(im5);
             panos.setEnabled(true);
             pelaa.setEnabled(true);
-            tarkistaVoitto();
+            ValmisPokerikasi kasi = tarkistaVoitto();
             if (pelivaraukset.getRahat() == 0) {
                 //Jos ja kun pelaaja häviää kaiken, annetaan hänelle 5e lisää pelivarauksiin
                 pelivaraukset.lisaaPelivarauksia(5);
@@ -193,7 +193,7 @@ public class PelaaKuuntelija implements ActionListener {
                 viimeisinvoitto.setText("Hävisit kaiken, ota 5e lisää");
             } else {
                 pelivarauksettext.setText("Pelivaraukset: " + pelivaraukset.getRahat() + "" + "e");
-                viimeisinvoitto.setText("Viimeisin voitto: " + pelivaraukset.getViimeisinvoitto() + "e");
+                viimeisinvoitto.setText("Viimeisin voitto: " + pelivaraukset.getViimeisinvoitto() + "e, " + kasi.toString() + "");
 
             }
 
@@ -203,63 +203,82 @@ public class PelaaKuuntelija implements ActionListener {
     }
 
     /**
-     * Tarkistaa onko pokerikasi voittava.      *
+     * Tarkistaa onko pokerikasi voittava. *
      */
-    public void tarkistaVoitto() {
+    public ValmisPokerikasi tarkistaVoitto() {
+        kortinvaihto.setEnabled(false);
         if (this.pkasi.toString().contains("jokeri0")) {
-            int parasKerroin = 0;
+            double parasArvo = 0;
             Pokerikasi kasi = pkasi;
             kasi.poistaKorttiString("jokeri0");
-            
-            Korttipakka pakka = new Korttipakka();
+
+            this.pakka = new Korttipakka();
             pakka.luoKorttipakkaIlmanJokeria();
-   
-            
-            for (int i = 0; i<pakka.getKorttienlkmPakassa();i++ ) {
+
+
+            for (int i = 0; i < pakka.getKorttienlkmPakassa(); i++) {
                 Kortti jokeri = pakka.gerKortti(i);
                 kasi.lisaaKortti(jokeri);
-                if (tunnistaja.onkoKuningasVarisuora(pkasi) && parasKerroin < listaValmiistaKasista.getTiettykasi(9).getKerroin()) {          
-            parasKerroin = listaValmiistaKasista.getTiettykasi(9).getKerroin();
-        } else if (tunnistaja.onkoVarisuora(pkasi) && parasKerroin < listaValmiistaKasista.getTiettykasi(8).getKerroin()) {
-            parasKerroin = listaValmiistaKasista.getTiettykasi(8).getKerroin();
-        } else if (tunnistaja.onkoNeloset(pkasi) && parasKerroin < listaValmiistaKasista.getTiettykasi(7).getKerroin()) {
-            parasKerroin = listaValmiistaKasista.getTiettykasi(7).getKerroin();
-        } else if (tunnistaja.onkoTaysKasi(pkasi) && parasKerroin < listaValmiistaKasista.getTiettykasi(6).getKerroin()) {
-           parasKerroin = listaValmiistaKasista.getTiettykasi(6).getKerroin();
-        } else if (tunnistaja.onkoVari(pkasi) && parasKerroin < listaValmiistaKasista.getTiettykasi(5).getKerroin()) {
-           parasKerroin = listaValmiistaKasista.getTiettykasi(5).getKerroin();
-        } else if (tunnistaja.onkoSuora(pkasi) && parasKerroin < listaValmiistaKasista.getTiettykasi(4).getKerroin()) {
-            parasKerroin = listaValmiistaKasista.getTiettykasi(4).getKerroin();
-        } else if (tunnistaja.onkoKolmoset(pkasi) && parasKerroin < listaValmiistaKasista.getTiettykasi(3).getKerroin()) {
-           parasKerroin = listaValmiistaKasista.getTiettykasi(3).getKerroin();
-        } else if (tunnistaja.onkoRattaat(pkasi) && parasKerroin < listaValmiistaKasista.getTiettykasi(2).getKerroin()) {
-           parasKerroin = listaValmiistaKasista.getTiettykasi(2).getKerroin();
-        }
-                
+                if (tunnistaja.onkoKuningasVarisuora(pkasi) && parasArvo < listaValmiistaKasista.getTiettykasi(9).getKerroin()) {
+                    parasArvo = listaValmiistaKasista.getTiettykasi(9).getArvojarjestys();
+                } else if (tunnistaja.onkoVarisuora(pkasi) && parasArvo < listaValmiistaKasista.getTiettykasi(8).getKerroin()) {
+                    parasArvo = listaValmiistaKasista.getTiettykasi(8).getArvojarjestys();
+                } else if (tunnistaja.onkoNeloset(pkasi) && parasArvo < listaValmiistaKasista.getTiettykasi(7).getKerroin()) {
+                    parasArvo = listaValmiistaKasista.getTiettykasi(7).getArvojarjestys();
+                } else if (tunnistaja.onkoTaysKasi(pkasi) && parasArvo < listaValmiistaKasista.getTiettykasi(6).getKerroin()) {
+                    parasArvo = listaValmiistaKasista.getTiettykasi(6).getArvojarjestys();
+                } else if (tunnistaja.onkoVari(pkasi) && parasArvo < listaValmiistaKasista.getTiettykasi(5).getKerroin()) {
+                    parasArvo = listaValmiistaKasista.getTiettykasi(5).getArvojarjestys();
+                } else if (tunnistaja.onkoSuora(pkasi) && parasArvo < listaValmiistaKasista.getTiettykasi(4).getKerroin()) {
+                    parasArvo = listaValmiistaKasista.getTiettykasi(4).getArvojarjestys();
+                } else if (tunnistaja.onkoKolmoset(pkasi) && parasArvo < listaValmiistaKasista.getTiettykasi(3).getKerroin()) {
+                    parasArvo = listaValmiistaKasista.getTiettykasi(3).getArvojarjestys();
+                } else if (tunnistaja.onkoRattaat(pkasi) && parasArvo < listaValmiistaKasista.getTiettykasi(2).getKerroin()) {
+                    parasArvo = listaValmiistaKasista.getTiettykasi(2).getArvojarjestys();
+                } else if (tunnistaja.onkoHai(kasi) && parasArvo == 0) {
+                    parasArvo = -1;
+                } 
+
                 kasi.poistaKorttiString(jokeri.toString());
             }
-            if (parasKerroin>0) {
-                 pelivaraukset.lisaaVoitto(parasKerroin);
+            if (parasArvo > 0) {
+                pelivaraukset.lisaaVoitto(parasArvo);
+                return listaValmiistaKasista.arvolla(parasArvo);
+                
+            } else {
+                return listaValmiistaKasista.arvolla(parasArvo);
             }
-           
+            
+
         } else if (tunnistaja.onkoKuningasVarisuora(pkasi)) {
             pelivaraukset.lisaaVoitto(listaValmiistaKasista.getTiettykasi(9).getKerroin());
+            return listaValmiistaKasista.getTiettykasi(9);
         } else if (tunnistaja.onkoVarisuora(pkasi)) {
             pelivaraukset.lisaaVoitto(listaValmiistaKasista.getTiettykasi(8).getKerroin());
+            return listaValmiistaKasista.getTiettykasi(8);
         } else if (tunnistaja.onkoNeloset(pkasi)) {
             pelivaraukset.lisaaVoitto(listaValmiistaKasista.getTiettykasi(7).getKerroin());
+            return listaValmiistaKasista.getTiettykasi(7);
         } else if (tunnistaja.onkoTaysKasi(pkasi)) {
             pelivaraukset.lisaaVoitto(listaValmiistaKasista.getTiettykasi(6).getKerroin());
+            return listaValmiistaKasista.getTiettykasi(6);
         } else if (tunnistaja.onkoVari(pkasi)) {
             pelivaraukset.lisaaVoitto(listaValmiistaKasista.getTiettykasi(5).getKerroin());
+            return listaValmiistaKasista.getTiettykasi(5);
         } else if (tunnistaja.onkoSuora(pkasi)) {
             pelivaraukset.lisaaVoitto(listaValmiistaKasista.getTiettykasi(4).getKerroin());
+            return listaValmiistaKasista.getTiettykasi(4);
         } else if (tunnistaja.onkoKolmoset(pkasi)) {
             pelivaraukset.lisaaVoitto(listaValmiistaKasista.getTiettykasi(3).getKerroin());
+            return listaValmiistaKasista.getTiettykasi(3);
         } else if (tunnistaja.onkoRattaat(pkasi)) {
             pelivaraukset.lisaaVoitto(listaValmiistaKasista.getTiettykasi(2).getKerroin());
+            return listaValmiistaKasista.getTiettykasi(2);
+        } else if (tunnistaja.onkoHai(pkasi)) {
+            return listaValmiistaKasista.getTiettykasi(0);
+        } else {
+            return listaValmiistaKasista.getTiettykasi(1);
         }
 
-        kortinvaihto.setEnabled(false);
     }
 }

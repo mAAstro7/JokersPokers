@@ -35,7 +35,7 @@ public class Pokerikasi {
         while (pokerikasi.size()<5) {
             Kortti kortti = pakka.arvoKortti();
             pokerikasi.add(kortti);
-            pakka.poistaKortti(kortti);
+
         }
 
     }
@@ -130,10 +130,6 @@ public class Pokerikasi {
             pokerikasi.add(kortti);
         }
 
-    }
-
-    public Kortti getViimeinenKortti() {
-        return pokerikasi.get(4);
     }
 
     public String toString() {

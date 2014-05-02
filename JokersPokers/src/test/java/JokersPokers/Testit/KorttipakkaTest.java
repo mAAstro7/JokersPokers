@@ -26,13 +26,30 @@ public class KorttipakkaTest {
     public void onkoPakkaLuotuOikein() {
         assertEquals(53, pakka.getKorttienlkmPakassa());
     }
+  
+    @Test
+    public void onkoPakkaLuotuOikeinIlmanJokeria() {
+        this.pakka = new Korttipakka();
+        pakka.luoKorttipakkaIlmanJokeria();
+        assertEquals(52, pakka.getKorttienlkmPakassa());
+    }
+    
+        @Test
+    public void lisaytyykoJokeri() {
+        this.pakka = new Korttipakka();
+        pakka.luoKorttipakkaIlmanJokeria();
+        pakka.lisaaJokeri();
+        assertEquals(53, pakka.getKorttienlkmPakassa());
+        
+    }
+        
   @Test
-  public void poistuukoKortti() {
+  public void poistuukoKorttiArvottaessa() {
       Kortti kortti;
       kortti = pakka.arvoKortti();
-      pakka.poistaKortti(kortti);
       assertEquals(52, pakka.getKorttienlkmPakassa());
     }
+  
   @Test
   public void poistuukoKortitkunluodaanKasi() {
       Pokerikasi kasi = new Pokerikasi();

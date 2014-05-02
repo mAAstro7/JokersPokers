@@ -35,6 +35,15 @@ public class ValmiitPokerikadet {
     public List<ValmisPokerikasi> getKadet() {
         return kadet;
     }
+    
+    public ValmisPokerikasi arvolla(double arvo) {
+        for (ValmisPokerikasi kasi: kadet) {
+            if (kasi.getArvojarjestys() == arvo) {
+                return kasi;
+            }
+        }
+        return null;
+    }
 
     public int getKasienlkm() {
         return kadet.size();
