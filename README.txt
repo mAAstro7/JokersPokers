@@ -1,5 +1,7 @@
 JokersPokers
 ====
+Alku:
+Pelaajalle annetaan 10e pelivarauksiin, mahdollisesti t‰m‰n h‰vitty‰‰n h‰n saa 5e lis‰‰, joka kerta kun n‰in k‰y
 
 Pelin kulku:
 Pelaaja saa 5 korttia joista koittaa muodostaa mahdollisimman hyv‰n pokerik‰den.
