@@ -13,12 +13,12 @@ Panoskoko on 20snt - 2e. Panoskoko nousee 20snt välein.
 
 Voittotaulukko:
 
-Hai:		0x
-Pari:		0x
-Kaksi paria:	2x
+Hai:			0x
+Pari:			0x
+Kaksi paria:		2x
 Kolmoset:		2x
-Suora:		3x
-Väri:		4x
+Suora:			3x
+Väri:			4x
 Täyskäsi:		8x
 Neloset:		15x
 Värisuora:		40x
