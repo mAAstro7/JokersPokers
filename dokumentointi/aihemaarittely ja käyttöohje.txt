@@ -4,6 +4,8 @@ Käyttäjät: Pelaaja
 
 Toiminnot: Pelata jokeripokeria
 
+Tavoite: Muodostaa mahdollisimman hyvä pokerikäsi
+
 Pelin kulku: Pelikierros alkaa panoksen valinnalla. Oletuspanoksena on 20snt joten panosta ei ole pakko "valita". Panos on 20snt-2e ja kasvaa 20snt kerrallaan. Pelaaja saa alkupääomaksi 10e
 
 Kun panos on pelaajan mielestä sopiva pelaaja painaa pelaa painiketta. Tällöin pelaajalle jaetaan viisi (5) korttia. Pelaajan on mahdollista vaihtaa 0-5 korttia. 
