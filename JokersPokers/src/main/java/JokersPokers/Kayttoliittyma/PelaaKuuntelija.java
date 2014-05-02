@@ -1,3 +1,8 @@
+/**
+ * Luokka hoitaa pääosin pelistä. Luokka hallinnoi pelaajan pokerikättä, kortteja sekä voiton tarkistusta
+ * 
+ */
+
 package JokersPokers.Kayttoliittyma;
 
 import JokersPokers.Kortti.Kortti;
@@ -112,30 +117,27 @@ public class PelaaKuuntelija implements ActionListener {
         if (e.getSource() == this.ekaVaihto) {
             this.ekaVaihto.setEnabled(false);
             pkasi.vaihdaKorttiIndeksilla(pakka, 0);
-//            pkasi.vaihdaKortti(pakka, pkasi.getKortti(0));
+
 
         } else if (e.getSource() == tokaVaihto) {
             this.tokaVaihto.setEnabled(false);
 
             pkasi.vaihdaKorttiIndeksilla(pakka, 1);
-//            pkasi.vaihdaKortti(pakka, pkasi.getKortti(1));
+
 
         } else if (e.getSource() == kolmasVaihto) {
             this.kolmasVaihto.setEnabled(false);
 
             pkasi.vaihdaKorttiIndeksilla(pakka, 2);
-//            pkasi.vaihdaKortti(pakka, pkasi.getKortti(2));
 
         } else if (e.getSource() == neljasVaihto) {
             this.neljasVaihto.setEnabled(false);
 
             pkasi.vaihdaKorttiIndeksilla(pakka, 3);
-//            pkasi.vaihdaKortti(pakka, pkasi.getKortti(3));
 
         } else if (e.getSource() == viidesVaihto) {
             this.viidesVaihto.setEnabled(false);
             pkasi.vaihdaKorttiIndeksilla(pakka, 4);
-//            pkasi.vaihdaKortti(pakka, pkasi.getKortti(4));
 
 
         } else if (e.getSource() == pelaa) {
@@ -203,7 +205,8 @@ public class PelaaKuuntelija implements ActionListener {
     }
 
     /**
-     * Tarkistaa onko pokerikasi voittava. *
+     * Tarkistaa onko pokerikasi voittava. 
+     *
      */
     public ValmisPokerikasi tarkistaVoitto() {
         kortinvaihto.setEnabled(false);

@@ -1,3 +1,8 @@
+/**
+ * Käyttöliittymä luokka. Tämä luokka luo komponentit graafista käyttöliittymää varten
+ * 
+ */
+
 package JokersPokers.Kayttoliittyma;
 
 import JokersPokers.Kortti.*;

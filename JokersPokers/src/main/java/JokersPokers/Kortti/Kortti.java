@@ -1,5 +1,5 @@
 /**
- * Luokka korttej varten. Jokainen kortti tietää arvonsa sekä maansa
+ * Luokka kortteja varten. Jokainen kortti tietää arvonsa sekä maansa
  * 
  */
 package JokersPokers.Kortti;

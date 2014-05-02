@@ -1,3 +1,8 @@
+/**
+ * Luokka hoitaa pelivarauksen graafisessa käyttöliittymässä.
+ * 
+ */
+
 
 package JokersPokers.Kayttoliittyma;
 
