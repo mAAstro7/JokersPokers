@@ -1,0 +1,13 @@
+Ohjelman rakenteen kuvaus:
+
+Pokerik‰si rakennetaan Kortti luokan olioista.
+Korttiluokan oliot on tallennettu Korttipakka olioon joka sis‰lt‰‰ normaalin korttipakan kortit ja yhden jokerin.
+Pokerik‰siluodaan korttipakan metodia arvokortti k‰ytt‰en. Kyseinen metodi arpoo pakasta kortin ja poistaa sen pakasta sen j‰lkeen ettei sama kortti p‰‰se pelaajan k‰teen kahdesti.
+Korttipakka joudutaa siis luomaan aina uudestaan ennen pokerik‰den arpomista.
+
+Voiton tarkistamisen hoitaa kadentunnistaja luokka. T‰m‰ luokka k‰ytt‰‰ apunaan Valmiitpokerik‰det oliota joka pit‰‰ sis‰ll‰‰n valmiita pokerik‰si‰. Esimerkiksi valmispokeri voisi olla suora. Valmispokerik‰si tiet‰‰ k‰den nimen, kertoimen sek‰ arvoj‰rjestyksen.
+Arvoj‰rjestyst‰ tarvitaan kun vertaillaan sellasia k‰si‰ joiden voittokertoimet ovat samat.
+
+Pelaaja olio tiet‰‰ omat pelivarauksensa sek‰ Pokerik‰den.
+Pelivaraukset hallinnoivat pelaajan saldoa, panosta sek‰ viimeist‰ voittoa.
+Panos on siis kokoajan pelivarauksien tiedossa eik‰ sit‰ erikseen tarvitse jokakerta tuoda pelivarauksen tietoon peli‰ tai voittoa maksettaessa.
