@@ -1,9 +1,9 @@
 /**
  * 404
  */
-package main.java.JokersPokers.Pelaaja;
+package JokersPokers.Pelaaja;
 
-import main.java.JokersPokers.Kortti.Korttipakka;
+import JokersPokers.Kortti.Korttipakka;
 
 
 public class Pelaaja {

@@ -1,9 +1,9 @@
-package main.java.JokersPokers.Kayttoliittyma;
+package JokersPokers.Kayttoliittyma;
 
-import main.java.JokersPokers.Kortti.*;
-import main.java.JokersPokers.Pelaaja.*;
-import main.java.JokersPokers.Pokerikadet.ValmiitPokerikadet;
-import main.java.JokersPokers.Tunnistaja.KadenTunnistaja;
+import JokersPokers.Kortti.*;
+import JokersPokers.Pelaaja.*;
+import JokersPokers.Pokerikadet.ValmiitPokerikadet;
+import JokersPokers.Tunnistaja.KadenTunnistaja;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
@@ -74,11 +74,11 @@ public class Kayttoliittyma implements Runnable {
         JLabel kuva4 = new JLabel();
         JLabel kuva5 = new JLabel();
 
-        JButton yksi = new JButton("<html>VAIHDA TÄMÄ KORTTI</html>");
-        JButton kaksi = new JButton("<html>VAIHDA TÄMÄ KORTTI</html>");
-        JButton kolme = new JButton("<html>VAIHDA TÄMÄ KORTTI</html>");
-        JButton nelja = new JButton("<html>VAIHDA TÄMÄ KORTTI</html>");
-        JButton viisi = new JButton("<html>VAIHDA TÄMÄ KORTTI</html>");
+        JButton yksi = new JButton("VAIHDA TÄMÄ KORTTI");
+        JButton kaksi = new JButton("VAIHDA TÄMÄ KORTTI");
+        JButton kolme = new JButton("VAIHDA TÄMÄ KORTTI");
+        JButton nelja = new JButton("VAIHDA TÄMÄ KORTTI");
+        JButton viisi = new JButton("VAIHDA TÄMÄ KORTTI");
 
         panel.add(kuva1);
         panel.add(kuva2);

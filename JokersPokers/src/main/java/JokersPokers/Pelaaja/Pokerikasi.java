@@ -1,9 +1,9 @@
 /**
  * Luokka pokerikädelle
  */
-package main.java.JokersPokers.Pelaaja;
+package JokersPokers.Pelaaja;
 
-import main.java.JokersPokers.Kortti.*;
+import JokersPokers.Kortti.*;
 import java.util.*;
 
 public class Pokerikasi {
